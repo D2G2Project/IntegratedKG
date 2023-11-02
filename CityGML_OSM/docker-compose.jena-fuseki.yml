@@ -1,0 +1,167 @@
+version: "3.8"
+
+services:
+  # Create 3DCityDB Schema
+  db-citydb:
+    image: 3dcitydb/3dcitydb-pg:15-3.3-4.4.0
+    command:
+      - "-c"
+      - "max_wal_size=4GB"
+    ports:
+      - "7778:5432"
+    environment:
+      - POSTGRES_DB=citydb
+      - POSTGRES_USER=citydb
+      - POSTGRES_PASSWORD=citydb
+      - PGDATA=postgres
+      - SRID=25832
+    networks:
+      - citydb-net
+
+  # Load 3DCityDB data
+  impexp-citydb:
+    image: 3dcitydb/impexp:5.3.0
+    volumes:
+      - ./citygml-data:/data
+      - ./wait-for-it:/opt/wait-for-it
+    ports:
+      - "7788:5432"
+    environment:
+      - CITYDB_TYPE=postgresql
+      - CITYDB_PORT=7778
+      - CITYDB_HOST=localhost
+      - CITYDB_NAME=citydb
+      - CITYDB_SCHEMA=citydb
+      - CITYDB_USERNAME=citydb
+      - CITYDB_PASSWORD=citydb
+      - SRID=25832
+    command:
+      - "import"
+      - "-H"
+      - "host.docker.internal"
+      - "-d"
+      - "citydb"
+      - "-u"
+      - "citydb"
+      - "-p"
+      - "citydb"
+      - "/data"
+    entrypoint:
+      [
+        "/opt/wait-for-it/wait-for-it.sh",
+        "db-citydb:5432",
+        "--timeout=0",
+        "--strict",
+        "--",
+        "impexp",
+      ]
+    networks:
+      - citydb-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Add table with all OSM points of interest
+  osm2pgsql:
+    build:
+      context: osm2pgsql/
+    command: bash -c "sleep 5; /usr/local/bin/osm-importer.sh"
+    environment:
+      PG_PORT_5432_TCP_ADDR: host.docker.internal
+      PG_PORT_5432_TCP_PORT: 7778
+      PG_ENV_POSTGRES_DB: citydb
+      PG_ENV_POSTGRES_USER: citydb
+      PG_ENV_POSTGRES_PASSWORD: citydb
+      REGION: europe/germany/bayern/oberbayern
+    depends_on:
+      impexp-citydb:
+        condition: service_completed_successfully
+    networks:
+      - citydb-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Add info on xAL addresses and citygml-osm matches table
+  db-edit:
+    build:
+      context: db-edit/
+    depends_on:
+      osm2pgsql:
+        condition: service_completed_successfully
+    networks:
+      - citydb-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Add table with CityGML to OSM linkages
+  citygml2osmlinkage:
+    build:
+      context: linkage_citygml_osm/
+    depends_on:
+      db-edit:
+        condition: service_completed_successfully
+    networks:
+      - citydb-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  db-postprocess:
+    build:
+      context: post-processing/
+    depends_on:
+      citygml2osmlinkage:
+        condition: service_completed_successfully
+    networks:
+      - citydb-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Use Ontop to materialize triples
+  ontop:
+    #   image: ontop/ontop:5.0.2
+    # Temporary image which resolves some issue caused by the combination of intersects and buffer in PostGIS
+    image: albulenpano/d2g2-test:v1
+    command: [ "ontop", "materialize", "-f", "turtle", "--output", "/opt/ontop/input/materialized-triples.ttl" ]
+    environment:
+      ONTOP_ONTOLOGY_FILE: /opt/ontop/input/citygml2.0.owl
+      ONTOP_XML_CATALOG_FILE: /opt/ontop/input/catalog-v001.xml
+      ONTOP_MAPPING_FILE: /opt/ontop/input/citygml2.0.obda
+      ONTOP_PROPERTIES_FILE: /opt/ontop/input/citygml2.0.properties
+      #ONTOP_SPARQL_RULES_FILE: /opt/ontop/input/citygml2.0-rules.toml
+      ONTOP_LOG_LEVEL: "true"
+    volumes:
+      - ./vkg:/opt/ontop/input
+      - ./jdbc:/opt/ontop/jdbc
+    depends_on:
+      db-postprocess:
+        condition: service_completed_successfully
+    ports:
+      - "8082:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  jena-fuseki:
+    build:
+      context: ./jena-fuseki
+    container_name: fuseki
+    init: true
+    environment:
+      #- user is "admin"
+      - ADMIN_PASSWORD=admin
+      - JVM_ARGS=-Xmx24G
+      - TDB=2
+    volumes:
+      - ./vkg/materialized-triples.ttl:/jena-fuseki/staging/materialized-triples.ttl
+    depends_on:
+      ontop:
+        condition: service_completed_successfully
+    ports:
+      - "3030:3030"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  d2g2:
+
+networks:
+  citydb-net:
+    name: citydb-net

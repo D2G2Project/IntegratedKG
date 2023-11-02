@@ -1,0 +1,7 @@
+fiona
+shapely
+lxml
+geopandas
+pandas
+sqlalchemy
+psycopg2

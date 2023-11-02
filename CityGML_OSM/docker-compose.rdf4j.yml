@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  rdf4j:
+    container_name: rdf4j
+    build:
+      context: ./rdf4j
+    privileged: true
+    ports:
+      - 8080:8080
+    volumes:
+      - ./logs:/usr/local/tomcat/logs
+    environment:
+      - JAVA_OPTS=-Xmx4g
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      citydb-net:
+
+networks:
+  citydb-net:
+    name: citydb-net

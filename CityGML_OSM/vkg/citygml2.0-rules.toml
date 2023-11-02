@@ -1,0 +1,34 @@
+rules = [
+    """
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX : <http://cui.unige.ch/citygml/2.0/>
+    PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
+    PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX lgdo: <http://linkedgeodata.org/ontology/>
+    INSERT {
+      ?citygmlentity :matchCityGMLtoOSM ?osmentity .
+    } WHERE {
+    # Get citygml-osm linkage
+    ?linkage a :Association_CityGML_OSM .
+    ?linkage :matchOSM ?osmentity .
+    ?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
+    }
+    """,
+    """
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX : <http://cui.unige.ch/citygml/2.0/>
+    PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
+    PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX lgdo: <http://linkedgeodata.org/ontology/>
+    INSERT {
+      ?osmentity :hasOSMClassName ?osmclassname .
+    } WHERE {
+    # Get osm-osmclass linkage
+    ?osmassociation a :Association_OSM_Class .
+    ?osmassociation :hasosmid ?osmentity .
+    ?osmassociation :hasosmclassid ?osmclassname .
+    }
+    """
+]
