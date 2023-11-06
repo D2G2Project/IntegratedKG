@@ -1,42 +1,41 @@
 [PrefixDeclaration]
-:		https://github.com/yuzzfeng/D2G2/citygml#
-d2g2:		https://github.com/yuzzfeng/D2G2/citygml#
+:		https://github.com/D2G2Project/CityGML#
+d2g2:		https://github.com/D2G2Project/CityGML#
 dc:		http://purl.org/dc/elements/1.1/
-xs:		http://www.w3.org/2001/XMLSchema
+core:		http://www.opengis.net/citygml/2.0/
 app:		http://www.opengis.net/citygml/appearance/2.0/
+bldg:		http://www.opengis.net/citygml/building/2.0/
+brid:		http://www.opengis.net/citygml/bridge/2.0/
 dem:		http://www.opengis.net/citygml/relief/2.0/
 frn:		http://www.opengis.net/citygml/cityfurniture/2.0/
 gen:		http://www.opengis.net/citygml/generics/2.0/
-geo:		http://www.opengis.net/ont/geosparql#
-gml:		http://www.opengis.net/gml/
 grp:		http://www.opengis.net/citygml/cityobjectgroup/2.0/
-lgd:		http://linkedgeodata.org/resource/
-owl:		http://www.w3.org/2002/07/owl#
-rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
-sf:         http://www.opengis.net/ont/sf#
+luse:		http://www.opengis.net/citygml/landuse/2.0/
 tex:		http://www.opengis.net/citygml/texturedsurface/2.0/
+tran:		http://www.opengis.net/citygml/transportation/2.0/
 tun:		http://www.opengis.net/citygml/tunnel/2.0/
 veg:		http://www.opengis.net/citygml/vegetation/2.0/
-voc:		http://vocabulary.example.org/
 wtr:		http://www.opengis.net/citygml/waterbody/2.0/
+lgd:		http://linkedgeodata.org/resource/
+lgdg:		http://linkedgeodata.org/geometry/
+lgdo:		http://linkedgeodata.org/ontology/
+obda:		https://w3id.org/obda/vocabulary#
+geo:		http://www.opengis.net/ont/geosparql#
+gml:		http://www.opengis.net/gml/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+sf:         http://www.opengis.net/ont/sf#
 www:		http://www.w3.org/2001/
 xml:		http://www.w3.org/XML/1998/namespace
 xsd:		http://www.w3.org/2001/XMLSchema#
-bldg:		http://www.opengis.net/citygml/building/2.0/
-brid:		http://www.opengis.net/citygml/bridge/2.0/
-core:		http://www.opengis.net/citygml/2.0/
-data:		http://mydata.example.org/
-lgdg:		http://linkedgeodata.org/geometry/
-lgdo:		http://linkedgeodata.org/ontology/
-luse:		http://www.opengis.net/citygml/landuse/2.0/
-obda:		https://w3id.org/obda/vocabulary#
-rdfs:		http://www.w3.org/2000/01/rdf-schema#
-tran:		http://www.opengis.net/citygml/transportation/2.0/
-terms:		http://purl.org/dc/terms/
+xs:		http://www.w3.org/2001/XMLSchema
 
 [MappingDeclaration] @collection [[
+; Addresses
+
 mappingId	Address
-target		:address/{"id"} a core:Address ; rdfs:label {"streetaddress"}^^www:XMLSchema#string ; geo:asWKT {multi_point_wkt}^^geo:wktLiteral .
+target		:address/{"id"} a core:Address ; rdfs:label {"streetaddress"}^^xsd:string ; geo:asWKT {multi_point_wkt}^^geo:wktLiteral .
 source		SELECT "id", "multi_point", ST_ASTEXT(ST_TRANSFORM(ST_SWAPORDINATES("multi_point", 'xy'), 4326)) AS "multi_point_wkt", "po_box", "state", "street", "zip_code", CONCAT("street", ' ', "house_number") AS "streetaddress"
 			FROM "address"
 
@@ -46,14 +45,11 @@ source		SELECT "id"
 			FROM "address"
 
 mappingId	xALAddress
-target		:xaladdress/{"id"} a core:xalAddress ; :xalLocalityName {"xal_locality_name"}^^www:XMLSchema#string ; :xalLocalityType {"xal_locality_type"}^^www:XMLSchema#string ; :xalThoroughfareName {"xal_thoroughfare_name"}^^www:XMLSchema#string ; :xalThoroughfareType {"xal_thoroughfare_type"}^^www:XMLSchema#string .
+target		:xaladdress/{"id"} a core:xalAddress ; :xalLocalityName {"xal_locality_name"}^^xsd:string ; :xalLocalityType {"xal_locality_type"}^^xsd:string ; :xalThoroughfareName {"xal_thoroughfare_name"}^^xsd:string ; :xalThoroughfareType {"xal_thoroughfare_type"}^^xsd:string .
 source		SELECT "id", "xal_locality_name", "xal_locality_type", "xal_thoroughfare_name", "xal_thoroughfare_type"
 			FROM "address"
 
-mappingId	Address to Building
-target		:cityobject/{"building_id"} bldg:address :address/{"address_id"} .
-source		SELECT "address_id", "building_id"
-			FROM "address_to_building"
+; Geometries and Thematic Surfaces
 
 mappingId	Solid Geometry
 target		:solidgeometry/{"id"} a sf:PolyhderalSurface ; geo:asWKT {"geometry_wkt"}^^geo:wktLiteral .
@@ -83,260 +79,17 @@ target		:cityobject/{"building_id"} bldg:boundedBy :cityobject/{"id"} .
 source		SELECT building_id, id
 			FROM thematic_surface
 
-mappingId	BuildingFloorSurface
-target		:cityobject/{"id"} a bldg:WallSurface .
-source		SELECT id
-			FROM cityobject
-			WHERE objectclass_id=32
-
-mappingId	BuildingWallSurface
-target		:cityobject/{"id"} a bldg:WallSurface .
-source		SELECT id
-			FROM cityobject
-			WHERE objectclass_id=34
-
-mappingId	BuildingRoofSurface
-target		:cityobject/{"id"} a bldg:RoofSurface .
-source		SELECT id
-			FROM cityobject
-			WHERE objectclass_id=33
-
-mappingId	BuildingGroundSurface
-target		:cityobject/{"id"} a bldg:GroundSurface .
-source		SELECT id
-			FROM cityobject
-			WHERE objectclass_id=35
-
-mappingId	BuildingClosureSurface
-target		:cityobject/{"id"} a bldg:GroundSurface .
-source		SELECT id
-			FROM cityobject
-			WHERE objectclass_id=35
-
-mappingId	Appearance
-target		:appearance/{"id"} a app:Appearance ; rdfs:label {"name"}^^www:XMLSchema#string ; app:theme {"theme"}^^www:XMLSchema#string .
-source		SELECT "id", "name", "theme"
-			FROM "appearance"
-
-mappingId	Simple Texture
-target		:texture/{"id"} a tex:SimpleTexture ; app:mimeType {"tex_mime_type"}^^www:XMLSchema#string ; app:imageURI {"tex_image_uri"}^^www:XMLSchema#string .
-source		SELECT "id", "tex_image_uri", "tex_mime_type"
-			FROM "tex_image"
-
-mappingId	Bridge Opening
-target		:cityobject/{"id"} a brid:_Opening .
-source		SELECT "id"
-			FROM "bridge_opening"
-
-mappingId	Bridge Opening - Address
-target		:cityobject/{"id"} brid:address :address/{"address_id"} .
-source		SELECT "address_id", "id"
-			FROM "bridge_opening"
-
-mappingId	Bridge Opening - LoD3MultiSurface
-target		:cityobject/{"id"} brid:lod3MultiSurface :geometry/{"lod3_multi_surface_id"} .
-source		SELECT "id", "lod3_multi_surface_id"
-			FROM "bridge_opening"
-
-mappingId	Bridge Opening - LoD4MultiSurface
-target		:cityobject/{"id"} brid:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
-source		SELECT "id", "lod4_multi_surface_id"
-			FROM "bridge_opening"
-
-mappingId	Bridge Opening - LoD3ImplicitRep
-target		:cityobject/{"id"} brid:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
-source		SELECT "id", "lod3_implicit_rep_id"
-			FROM "bridge_opening"
-
-mappingId	Bridge Opening - LoD4ImplicitRep
-target		:cityobject/{"id"} brid:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
-source		SELECT "id", "lod4_implicit_rep_id"
-			FROM "bridge_opening"
-
-mappingId	Bridge Room
-target		:bridge_room/{"id"} a brid:BridgeRoom ; brid:class {"class"}^^www:XMLSchema#string ; brid:usage {"usage"}^^www:XMLSchema#string ; brid:function {"function"}^^www:XMLSchema#string .
-source		SELECT "bridge_id", "class", "function", "id", "usage"
-			FROM "bridge_room"
-
-mappingId	Bridge Room - LoD4MultiSurface
-target		:bridge_room/{"id"} brid:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
-source		SELECT "id", "lod4_multi_surface_id"
-			FROM "bridge_room"
-
-mappingId	Bridge Room - Interior
-target		:cityobject/{"bridge_id"} brid:interiorBridgeRoom :bridge_room/{"id"} .
-source		SELECT "bridge_id", "id"
-			FROM "bridge_room"
-
-mappingId	Bridge Room - LoD4Solid
-target		:bridge_room/{"id"} brid:lod4Solid :solidgeometry/{"lod4_solid_id"} .
-source		SELECT "id", "lod4_solid_id"
-			FROM "bridge_room"
-
-mappingId	Transportation Complex - LoD1MultiSurface
-target		:transportation_complex/{"id"} tran:lod1MultiSurface :geometry/{"lod1_multi_surface_id"} .
-source		SELECT "id", "lod1_multi_surface_id"
-			FROM "transportation_complex"
-
-mappingId	Transportation Complex - LoD2MultiSurface
-target		:transportation_complex/{"id"} tran:lod2MultiSurface :geometry/{"lod2_multi_surface_id"} .
-source		SELECT "id", "lod2_multi_surface_id"
-			FROM "transportation_complex"
-
-mappingId	Transportation Complex - LoD3MultiSurface
-target		:transportation_complex/{"id"} tran:lod3MultiSurface :geometry/{"lod3_multi_surface_id"} .
-source		SELECT "id", "lod3_multi_surface_id"
-			FROM "transportation_complex"
-
-mappingId	Transportation Complex - LoD4MultiSurface
-target		:transportation_complex/{"id"} tran:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
-source		SELECT "id", "lod4_multi_surface_id"
-			FROM "transportation_complex"
-
-mappingId	Transportation Complex
-target		:transportation_complex/{"id"} a tran:TransportationComplex ; tran:function {"function"}^^www:XMLSchema#string ; tran:class {"class"}^^www:XMLSchema#string ; tran:usage {"usage"}^^www:XMLSchema#string .
-source		SELECT "class", "function", "id", "usage"
-			FROM "transportation_complex"
-
-mappingId	Plant Cover
-target		:cityobject/{"id"} a veg:PlantCover ; veg:class {"class"}^^www:XMLSchema#string ; veg:averageHeight {"average_height"}^^www:XMLSchema#decimal ; veg:function {"function"}^^www:XMLSchema#string ; veg:usage {"usage"}^^www:XMLSchema#string .
-source		SELECT "average_height", "class", "function", "id", "usage"
-			FROM "plant_cover"
-
-mappingId	Plant Cover - LoD1MultiSurface
-target		:cityobject/{"id"} veg:lod1MultiSurface :geometry/{"lod1_multi_surface_id"} .
-source		SELECT "id", "lod1_multi_surface_id"
-			FROM "plant_cover"
-
-mappingId	Plant Cover - LoD2MultiSurface
-target		:cityobject/{"id"} veg:lod2MultiSurface :geometry/{"lod2_multi_surface_id"} .
-source		SELECT "id", "lod2_multi_surface_id"
-			FROM "plant_cover"
-
-mappingId	Plant Cover - LoD3MultiSurface
-target		:cityobject/{"id"} veg:lod3MultiSurface :geometry/{"lod3_multi_surface_id"} .
-source		SELECT "id", "lod3_multi_surface_id"
-			FROM "plant_cover"
-
-mappingId	Plant Cover - LoD4MultiSurface
-target		:cityobject/{"id"} veg:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
-source		SELECT "id", "lod4_multi_surface_id"
-			FROM "plant_cover"
-
-mappingId	Plant Cover - LoD1MultiSolid
-target		:cityobject/{"id"} veg:lod1MultiSolid :solidgeometry/{"lod1_multi_solid_id"} .
-source		SELECT "id", "lod1_multi_solid_id"
-			FROM "plant_cover"
-
-mappingId	Plant Cover - LoD2MultiSolid
-target		:cityobject/{"id"} veg:lod2MultiSolid :solidgeometry/{"lod2_multi_solid_id"} .
-source		SELECT "id", "lod2_multi_solid_id"
-			FROM "plant_cover"
-
-mappingId	Plant Cover - LoD3MultiSolid
-target		:cityobject/{"id"} veg:lod3MultiSolid :solidgeometry/{"lod3_multi_solid_id"} .
-source		SELECT "id", "lod3_multi_solid_id"
-			FROM "plant_cover"
-
-mappingId	Plant Cover - LoD4MultiSolid
-target		:cityobject/{"id"} veg:lod4MultiSolid :solidgeometry/{"lod4_multi_solid_id"} .
-source		SELECT "id", "lod4_multi_solid_id"
-			FROM "plant_cover"
-
-mappingId	Masspoint Relief
-target		:masspoint_relief/{"id"} a dem:MassPointRelief .
-source		SELECT "id", "objectclass_id", "relief_points"
-			FROM "masspoint_relief"
-
-mappingId	Building Installation
-target		:building_installation/{"id"} a bldg:BuildingInstallation ; bldg:function {"function"}^^www:XMLSchema#string ; bldg:class {"class"}^^www:XMLSchema#string ; bldg:usage {"usage"}^^www:XMLSchema#string .
-source		SELECT "building_id", "class", "function", "id", "lod2_brep_id", "lod2_implicit_ref_point", "lod2_implicit_rep_id", "lod2_implicit_transformation", "lod2_other_geom", "lod3_brep_id", "lod3_implicit_ref_point", "lod3_implicit_rep_id", "lod3_implicit_transformation", "lod3_other_geom", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "objectclass_id", "room_id", "usage"
-			FROM "building_installation"
-
-mappingId	Building Installation - Room Installation
-target		:building_installation/{"id"} bldg:roomInstallation :room/{"room_id"} .
-source		SELECT "id", "room_id"
-			FROM "building_installation"
-
-mappingId	Building Installation - LoD2ImplicitRep
-target		:building_installation/{"id"} bldg:lod2ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
-source		SELECT "id", "lod2_implicit_rep_id"
-			FROM "building_installation"
-
-mappingId	Building Installation - LoD3ImplicitRep
-target		:building_installation/{"id"} bldg:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
-source		SELECT "id", "lod3_implicit_rep_id"
-			FROM "building_installation"
-
-mappingId	Building Installation - LoD4ImplicitRep
-target		:building_installation/{"id"} bldg:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
-source		SELECT "id", "lod4_implicit_rep_id"
-			FROM "building_installation"
-
-mappingId	Implicit Geometry
-target		:geometry/{"id"} a core:ImplicitGeometry ; core:libraryObject {"library_object"}^^www:XMLSchema#hexBinary ; core:mimeType {"mime_type"}^^www:XMLSchema#string .
-source		SELECT "id", "library_object", "mime_type", "reference_to_library", "relative_brep_id", "relative_other_geom"
-			FROM "implicit_geometry"
-
-mappingId	Relief Feature to Relative Component
-target		:cityobject/{"relief_feature_id"} dem:reliefComponent :relief_component/{"relief_component_id"} .
-source		SELECT "relief_component_id", "relief_feature_id"
-			FROM "relief_feat_to_rel_comp"
-
-mappingId	gml Object
-target		:object/{"id"} a gml:_Object ; grp:class {"classname"}^^www:XMLSchema#string .
-source		SELECT "classname", "id"
-			FROM "objectclass"
-
-mappingId	Generic City Object
-target		:genericcityobject/{"id"} a gen:GenericCityObject ; gen:usage {"usage"}^^www:XMLSchema#string ; gen:class {"class"}^^www:XMLSchema#string ; gen:function {"function"}^^www:XMLSchema#string .
-source		SELECT "class", "function", "id", "lod0_brep_id", "lod0_implicit_ref_point", "lod0_implicit_rep_id", "lod0_implicit_transformation", "lod0_other_geom", "lod0_terrain_intersection", "lod1_brep_id", "lod1_implicit_ref_point", "lod1_implicit_rep_id", "lod1_implicit_transformation", "lod1_other_geom", "lod1_terrain_intersection", "lod2_brep_id", "lod2_implicit_ref_point", "lod2_implicit_rep_id", "lod2_implicit_transformation", "lod2_other_geom", "lod2_terrain_intersection", "lod3_brep_id", "lod3_implicit_ref_point", "lod3_implicit_rep_id", "lod3_implicit_transformation", "lod3_other_geom", "lod3_terrain_intersection", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "lod4_terrain_intersection", "objectclass_id", "usage"
-			FROM "generic_cityobject"
-
-mappingId	Generic City Object - LoD0ImplicitRep
-target		:genericcityobject/{"id"} gen:lod0ImplicitRepresentation :geometry/{"lod0_implicit_rep_id"} .
-source		SELECT "id", "lod0_implicit_rep_id"
-			FROM "generic_cityobject"
-
-mappingId	Generic City Object - LoD1ImplicitRep
-target		:genericcityobject/{"id"} gen:lod1ImplicitRepresentation :geometry/{"lod1_implicit_rep_id"} .
-source		SELECT "id", "lod1_implicit_rep_id"
-			FROM "generic_cityobject"
-
-mappingId	Generic City Object - LoD2ImplicitRep
-target		:genericcityobject/{"id"} gen:lod2ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
-source		SELECT "id", "lod2_implicit_rep_id"
-			FROM "generic_cityobject"
-
-mappingId	Generic City Object - LoD3ImplicitRep
-target		:genericcityobject/{"id"} gen:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
-source		SELECT "id", "lod3_implicit_rep_id"
-			FROM "generic_cityobject"
-
-mappingId	Generic City Object - LoD4ImplicitRep
-target		:genericcityobject/{"id"} gen:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
-source		SELECT "id", "lod4_implicit_rep_id"
-			FROM "generic_cityobject"
-
-mappingId	Bridge Furniture
-target		:cityobject/{"id"} a brid:BridgeFurniture ; brid:class {"class"}^^www:XMLSchema#string ; brid:usage {"usage"}^^www:XMLSchema#string ; brid:function {"function"}^^www:XMLSchema#string .
-source		SELECT "bridge_room_id", "class", "function", "id", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "objectclass_id", "usage"
-			FROM "bridge_furniture"
-
-mappingId	Bridge Furniture - LoD4ImplRep
-target		:cityobject/{"id"} brid:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
-source		SELECT "id", "lod4_implicit_rep_id"
-			FROM "bridge_furniture"
-
-mappingId	Bridge Furniture - Interior
-target		:cityobject/{"id"} brid:interiorFurniture :bridge_room/{"bridge_room_id"} .
-source		SELECT "bridge_room_id", "class", "function", "id", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "objectclass_id", "usage"
-			FROM "bridge_furniture"
+; Building
 
 mappingId	Building
-target		:cityobject/{"id"} a bldg:Building ; bldg:storeysBelowGround {"storeys_below_ground"}^^www:XMLSchema#decimal ; bldg:storeysAboveGround {"storeys_above_ground"}^^www:XMLSchema#decimal ; bldg:function {"function"}^^www:XMLSchema#string ; bldg:usage {"usage"}^^www:XMLSchema#string ; bldg:storeyHeightsAboveGround {"storey_heights_above_ground"}^^www:XMLSchema#decimal ; bldg:yearOfConstruction {"year_of_construction"}^^www:XMLSchema#date ; bldg:yearOfDemolition {"year_of_demolition"}^^www:XMLSchema#date ; bldg:measuredHeight {"measured_height"}^^www:XMLSchema#double ; bldg:storeyHeightsBelowGround {"storey_heights_below_ground"}^^www:XMLSchema#decimal ; bldg:class {"class"}^^www:XMLSchema#string .
+target		:cityobject/{"id"} a bldg:Building ; bldg:storeysBelowGround {"storeys_below_ground"}^^xsd:decimal ; bldg:storeysAboveGround {"storeys_above_ground"}^^xsd:decimal ; bldg:function {"function"}^^xsd:string ; bldg:usage {"usage"}^^xsd:string ; bldg:storeyHeightsAboveGround {"storey_heights_above_ground"}^^xsd:decimal ; bldg:yearOfConstruction {"year_of_construction"}^^xsd:date ; bldg:yearOfDemolition {"year_of_demolition"}^^xsd:date ; bldg:measuredHeight {"measured_height"}^^xsd:double ; bldg:storeyHeightsBelowGround {"storey_heights_below_ground"}^^xsd:decimal ; bldg:class {"class"}^^xsd:string .
 source		SELECT "building_parent_id", "building_root_id", "class", "function", "id", "measured_height", "measured_height_unit", "storey_heights_above_ground", "storey_heights_below_ground", "storeys_above_ground", "storeys_below_ground", "usage", "year_of_construction", "year_of_demolition"
 			FROM "building"
+
+mappingId	Address to Building
+target		:cityobject/{"building_id"} bldg:address :address/{"address_id"} .
+source		SELECT "address_id", "building_id"
+			FROM "address_to_building"
 
 mappingId	Building_Roof_Type
 target		:cityobject/{"id"} bldg:roofSurface :roof/{"roof_type"} .
@@ -344,7 +97,7 @@ source		SELECT "id", "roof_type"
 			FROM "building"
 
 mappingId	Building_Roof_Type_Name
-target		:roof/{"name"} bldg:roofType {"description_en"}^^www:XMLSchema#string .
+target		:roof/{"name"} bldg:roofType {"description_en"}^^xsd:string .
 source		SELECT "name", "description_en"
 			FROM "roof_codelist"
 
@@ -403,48 +156,124 @@ target		:cityobject/{"building_parent_id"} grp:parent :cityobject/{"id"} .
 source		SELECT "building_parent_id", "id"
 			FROM "building"
 
-mappingId	Texture Parametrization
-target		:textureparam/{"surface_geometry_id"} a app:_TextureParameterization ; app:worldToTexture {"world_to_texture"}^^www:XMLSchema#string ; app:surfaceDataMember :surface_data/{"surface_data_id"} ; tex:textureCoordinates {"texture_coordinates_wkt"}^^geo:wktLiteral .
-source		SELECT "is_texture_parametrization", "surface_data_id", "surface_geometry_id", ST_ASTEXT(ST_TRANSFORM(ST_SWAPORDINATES("texture_coordinates", 'xy'), 4326)) AS "texture_coordinates_wkt", "world_to_texture"
-			FROM "textureparam"
+mappingId	BuildingFloorSurface
+target		:cityobject/{"id"} a bldg:WallSurface .
+source		SELECT id
+			FROM cityobject
+			WHERE objectclass_id=32
+
+mappingId	BuildingWallSurface
+target		:cityobject/{"id"} a bldg:WallSurface .
+source		SELECT id
+			FROM cityobject
+			WHERE objectclass_id=34
+
+mappingId	BuildingRoofSurface
+target		:cityobject/{"id"} a bldg:RoofSurface .
+source		SELECT id
+			FROM cityobject
+			WHERE objectclass_id=33
+
+mappingId	BuildingGroundSurface
+target		:cityobject/{"id"} a bldg:GroundSurface .
+source		SELECT id
+			FROM cityobject
+			WHERE objectclass_id=35
+
+mappingId	BuildingClosureSurface
+target		:cityobject/{"id"} a bldg:GroundSurface .
+source		SELECT id
+			FROM cityobject
+			WHERE objectclass_id=35
+
+mappingId	Building Installation
+target		:building_installation/{"id"} a bldg:BuildingInstallation ; bldg:function {"function"}^^xsd:string ; bldg:class {"class"}^^xsd:string ; bldg:usage {"usage"}^^xsd:string .
+source		SELECT "building_id", "class", "function", "id", "lod2_brep_id", "lod2_implicit_ref_point", "lod2_implicit_rep_id", "lod2_implicit_transformation", "lod2_other_geom", "lod3_brep_id", "lod3_implicit_ref_point", "lod3_implicit_rep_id", "lod3_implicit_transformation", "lod3_other_geom", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "objectclass_id", "room_id", "usage"
+			FROM "building_installation"
+
+mappingId	Building Installation - Room Installation
+target		:building_installation/{"id"} bldg:roomInstallation :room/{"room_id"} .
+source		SELECT "id", "room_id"
+			FROM "building_installation"
+
+mappingId	Building Installation - LoD2ImplicitRep
+target		:building_installation/{"id"} bldg:lod2ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
+source		SELECT "id", "lod2_implicit_rep_id"
+			FROM "building_installation"
+
+mappingId	Building Installation - LoD3ImplicitRep
+target		:building_installation/{"id"} bldg:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
+source		SELECT "id", "lod3_implicit_rep_id"
+			FROM "building_installation"
+
+mappingId	Building Installation - LoD4ImplicitRep
+target		:building_installation/{"id"} bldg:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
+source		SELECT "id", "lod4_implicit_rep_id"
+			FROM "building_installation"
+
+mappingId	Building Furniture
+target		:cityobject/{"id"} a bldg:BuildingFurniture ; bldg:class {"class"}^^xsd:string ; bldg:usage {"usage"}^^xsd:string ; bldg:function {"function"}^^xsd:string .
+source		SELECT "class", "function", "id", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "objectclass_id", "room_id", "usage"
+			FROM "building_furniture"
+
+mappingId	Building Furniture - LoD4ImplicitRep
+target		:cityobject/{"id"} bldg:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
+source		SELECT "id", "lod4_implicit_rep_id"
+			FROM "building_furniture"
+
+mappingId	Building Furniture - Interior Room
+target		:cityobject/{"id"} bldg:interiorRoom :room/{"room_id"} .
+source		SELECT "id", "room_id"
+			FROM "building_furniture"
+
+; Room
+
+mappingId	Room
+target		:cityobject/{"id"} a bldg:Room ; bldg:class {"class"}^^xsd:string ; bldg:function {"function"}^^xsd:string ; bldg:usage {"usage"}^^xsd:string .
+source		SELECT "class", "function", "id", "usage"
+			FROM "room"
+
+mappingId	Room - LoD4Solid
+target		:cityobject/{"id"} bldg:lod4Solid :solidgeometry/{"lod4_solid_id"} .
+source		SELECT "id", "lod4_solid_id"
+			FROM "room"
+
+mappingId	Room - LoD4MultiSurface
+target		:cityobject/{"id"} bldg:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
+source		SELECT "id", "lod4_multi_surface_id"
+			FROM "room"
+
+mappingId	Room - Part of Building
+target		:cityobject/{"building_id"} bldg:consistsOfBuildingPart :room/{"id"} .
+source		SELECT "building_id", "id"
+			FROM "room"
+
+; Appearance and Texture
+
+mappingId	Appearance
+target		:appearance/{"id"} a app:Appearance ; rdfs:label {"name"}^^xsd:string ; app:theme {"theme"}^^xsd:string .
+source		SELECT "id", "name", "theme"
+			FROM "appearance"
+
+mappingId	Simple Texture
+target		:texture/{"id"} a tex:SimpleTexture ; app:mimeType {"tex_mime_type"}^^xsd:string ; app:imageURI {"tex_image_uri"}^^xsd:string .
+source		SELECT "id", "tex_image_uri", "tex_mime_type"
+			FROM "tex_image"
 
 mappingId	Surface Data
-target		:surface_data/{"id"} a app:_SurfaceData ; app:specularColor {"x3d_specular_color"}^^www:XMLSchema#string ; app:preferWorldFile {"gt_prefer_worldfile"}^^www:XMLSchema#boolean ; app:isFront {"is_front"}^^www:XMLSchema#boolean ; app:ambientIntensity {"x3d_ambient_intensity"}^^www:XMLSchema#decimal ; app:shininess {"x3d_shininess"}^^www:XMLSchema#decimal ; app:borderColor {"tex_border_color"}^^www:XMLSchema#string ; app:isSmooth {"x3d_is_smooth"}^^www:XMLSchema#boolean ; app:orientation {"gt_orientation"}^^www:XMLSchema#string ; app:emissiveColor {"x3d_emissive_color"}^^www:XMLSchema#string ; rdfs:label {"name"}^^www:XMLSchema#string ; app:textureType {"tex_texture_type"}^^www:XMLSchema#string ; app:diffuseColor {"x3d_diffuse_color"}^^www:XMLSchema#string ; app:transparency {"x3d_transparency"}^^www:XMLSchema#decimal ; geo:asWKT {"gt_reference_point_wkt"}^^geo:wktLiteral .
+target		:surface_data/{"id"} a app:_SurfaceData ; app:specularColor {"x3d_specular_color"}^^xsd:string ; app:preferWorldFile {"gt_prefer_worldfile"}^^xsd:boolean ; app:isFront {"is_front"}^^xsd:boolean ; app:ambientIntensity {"x3d_ambient_intensity"}^^xsd:decimal ; app:shininess {"x3d_shininess"}^^xsd:decimal ; app:borderColor {"tex_border_color"}^^xsd:string ; app:isSmooth {"x3d_is_smooth"}^^xsd:boolean ; app:orientation {"gt_orientation"}^^xsd:string ; app:emissiveColor {"x3d_emissive_color"}^^xsd:string ; rdfs:label {"name"}^^xsd:string ; app:textureType {"tex_texture_type"}^^xsd:string ; app:diffuseColor {"x3d_diffuse_color"}^^xsd:string ; app:transparency {"x3d_transparency"}^^xsd:decimal ; geo:asWKT {"gt_reference_point_wkt"}^^geo:wktLiteral .
 source		SELECT "description", "gmlid", "gt_orientation", "gt_prefer_worldfile", ST_ASTEXT(ST_TRANSFORM(ST_SWAPORDINATES("gt_reference_point", 'xy'), 4326)) AS "gt_reference_point_wkt", "id", "is_front", "name", "objectclass_id", "tex_border_color", "tex_image_id", "tex_texture_type", "tex_wrap_mode", "x3d_ambient_intensity", "x3d_diffuse_color", "x3d_emissive_color", "x3d_is_smooth", "x3d_shininess", "x3d_specular_color", "x3d_transparency"
 			FROM "surface_data"
 
-mappingId	Tunnel Installation
-target		:cityobject/{"id"} a tun:TunnelInstallation ; tun:class {"class"}^^www:XMLSchema#string ; tun:usage {"usage"}^^www:XMLSchema#string ; tun:function {"function"}^^www:XMLSchema#string .
-source		SELECT "class", "function", "id", "usage"
-			FROM "tunnel_installation"
+mappingId	Texture Parametrization
+target		:textureparam/{"surface_geometry_id"} a app:_TextureParameterization ; app:worldToTexture {"world_to_texture"}^^xsd:string ; app:surfaceDataMember :surface_data/{"surface_data_id"} ; tex:textureCoordinates {"texture_coordinates_wkt"}^^geo:wktLiteral .
+source		SELECT "is_texture_parametrization", "surface_data_id", "surface_geometry_id", ST_ASTEXT(ST_TRANSFORM(ST_SWAPORDINATES("texture_coordinates", 'xy'), 4326)) AS "texture_coordinates_wkt", "world_to_texture"
+			FROM "textureparam"
 
-mappingId	Tunnel Installation - LoD2ImplicitRep
-target		:cityobject/{"id"} tun:lod2ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
-source		SELECT "id", "lod2_implicit_rep_id"
-			FROM "tunnel_installation"
-
-mappingId	Tunnel Installation - LoD3ImplicitRep
-target		:cityobject/{"id"} tun:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
-source		SELECT "id", "lod3_implicit_rep_id"
-			FROM "tunnel_installation"
-
-mappingId	Tunnel Installation - LoD4ImplicitRep
-target		:cityobject/{"id"} tun:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
-source		SELECT "id", "lod4_implicit_rep_id"
-			FROM "tunnel_installation"
-
-mappingId	Tunnel Installation - Hollow Space
-target		:cityobject/{"id"} tun:hollowSpaceInstallation :hollow_space/{"tunnel_hollow_space_id"} .
-source		SELECT "id", "tunnel_hollow_space_id"
-			FROM "tunnel_installation"
-
-mappingId	TIN Relief
-target		:tin_relief/{"id"} a dem:TINRelief .
-source		SELECT "id"
-			FROM "tin_relief"
+; Bridge
 
 mappingId	Bridge
-target		:cityobject/{"id"} a brid:Bridge ; brid:isMovable {"is_movable"}^^www:XMLSchema#decimal ; brid:function {"function"}^^www:XMLSchema#string ; tun:yearOfConstruction {"year_of_construction"}^^www:XMLSchema#date ; brid:usage {"usage"}^^www:XMLSchema#string ; brid:class {"class"}^^www:XMLSchema#string ; brid:yearOfDemolition {"year_of_demolition"}^^www:XMLSchema#date .
+target		:cityobject/{"id"} a brid:Bridge ; brid:isMovable {"is_movable"}^^xsd:decimal ; brid:function {"function"}^^xsd:string ; tun:yearOfConstruction {"year_of_construction"}^^xsd:date ; brid:usage {"usage"}^^xsd:string ; brid:class {"class"}^^xsd:string ; brid:yearOfDemolition {"year_of_demolition"}^^xsd:date .
 source		SELECT "bridge_parent_id", "class", "function", "id", "is_movable", "usage", "year_of_construction", "year_of_demolition"
 			FROM "bridge"
 
@@ -488,133 +317,108 @@ target		:cityobject/{"id"} brid:lod4Solid :solidgeometry/{"id"} .
 source		SELECT "id", "lod4_solid_id"
 			FROM "bridge"
 
-mappingId	City Object Generalization
-target		:cityobject/{"cityobject_id"} core:generalizesTo :cityobject/{"generalizes_to_id"} .
-source		SELECT "cityobject_id", "generalizes_to_id"
-			FROM "generalization"
+mappingId	Address to bridge
+target		:cityobject/{"bridge_id"} brid:address :address/{"address_id"} .
+source		SELECT "address_id", "bridge_id"
+			FROM "address_to_bridge"
 
-mappingId	Grid Coverage
-target		:raster_relief/{"id"} a dem:RasterRelief .
-source		SELECT "id", "rasterproperty"
-			FROM "grid_coverage"
+mappingId	Bridge Furniture
+target		:cityobject/{"id"} a brid:BridgeFurniture ; brid:class {"class"}^^xsd:string ; brid:usage {"usage"}^^xsd:string ; brid:function {"function"}^^xsd:string .
+source		SELECT "bridge_room_id", "class", "function", "id", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "objectclass_id", "usage"
+			FROM "bridge_furniture"
 
-mappingId	Relief Component
-target		:relief_component/{"id"} a dem:_ReliefComponent ; dem:lod {"lod"}^^www:XMLSchema#decimal .
-source		SELECT "extent", "id", "lod"
-			FROM "relief_component"
-
-mappingId	Tunnel Furniture
-target		:cityobject/{"id"} a tun:TunnelFurniture ; frn:function {"function"}^^www:XMLSchema#string ; frn:usage {"usage"}^^www:XMLSchema#string ; frn:class {"class"}^^www:XMLSchema#string .
-source		SELECT "class", "function", "id", "usage"
-			FROM "tunnel_furniture"
-
-mappingId	Tunnel Furniture - LoD4ImplRep
-target		:cityobject/{"id"} tun:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
+mappingId	Bridge Furniture - LoD4ImplRep
+target		:cityobject/{"id"} brid:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
 source		SELECT "id", "lod4_implicit_rep_id"
-			FROM "tunnel_furniture"
+			FROM "bridge_furniture"
 
-mappingId	Tunnel Furniture - Hollow Space
-target		:cityobject/{"id"} tun:interiorHollowSpace :hollow_space/{"tunnel_hollow_space_id"} .
-source		SELECT "id", "tunnel_hollow_space_id"
-			FROM "tunnel_furniture"
+mappingId	Bridge Furniture - Interior
+target		:cityobject/{"id"} brid:interiorFurniture :bridge_room/{"bridge_room_id"} .
+source		SELECT "bridge_room_id", "class", "function", "id", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "objectclass_id", "usage"
+			FROM "bridge_furniture"
 
-mappingId	City Model
-target		:citymodel/{"id"} a core:CityModel ; rdfs:label {"name"}^^www:XMLSchema#string ; core:creationDate {"creation_date"}^^www:XMLSchema#dateTime ; core:terminationDate {"termination_date"}^^www:XMLSchema#dateTime ; geo:asWKT {"envelope_wkt"}^^geo:wktLiteral .
-source		SELECT "creation_date", ST_ASTEXT(ST_TRANSFORM(ST_SWAPORDINATES("envelope", 'xy'), 4326)) AS "envelope_wkt", "id", "name", "termination_date"
-			FROM "citymodel"
+mappingId	Bridge Opening
+target		:cityobject/{"id"} a brid:_Opening .
+source		SELECT "id"
+			FROM "bridge_opening"
 
-mappingId	Furniture
-target		:cityobject/{"id"} a frn:CityFurniture ; frn:usage {"usage"}^^www:XMLSchema#string ; frn:class {"class"}^^www:XMLSchema#string ; frn:function {"function"}^^www:XMLSchema#string .
-source		SELECT "id", "class", "function", "usage"
-			FROM "city_furniture"
+mappingId	Bridge Opening - Address
+target		:cityobject/{"id"} brid:address :address/{"address_id"} .
+source		SELECT "address_id", "id"
+			FROM "bridge_opening"
 
-mappingId	Furniture - LoD1ImplicitRep
-target		:cityobject/{"id"} frn:lod1ImplicitRepresentation :geometry/{"lod1_implicit_rep_id"} .
-source		SELECT "id", "lod1_implicit_rep_id"
-			FROM "city_furniture"
+mappingId	Bridge Opening - LoD3MultiSurface
+target		:cityobject/{"id"} brid:lod3MultiSurface :geometry/{"lod3_multi_surface_id"} .
+source		SELECT "id", "lod3_multi_surface_id"
+			FROM "bridge_opening"
 
-mappingId	Furniture - LoD2ImplicitRep
-target		:cityobject/{"id"} frn:lod1ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
-source		SELECT "id", "lod2_implicit_rep_id"
-			FROM "city_furniture"
+mappingId	Bridge Opening - LoD4MultiSurface
+target		:cityobject/{"id"} brid:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
+source		SELECT "id", "lod4_multi_surface_id"
+			FROM "bridge_opening"
 
-mappingId	Furniture - LoD3ImplicitRep
-target		:cityobject/{"id"} frn:lod1ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
+mappingId	Bridge Opening - LoD3ImplicitRep
+target		:cityobject/{"id"} brid:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
 source		SELECT "id", "lod3_implicit_rep_id"
-			FROM "city_furniture"
+			FROM "bridge_opening"
 
-mappingId	Furniture - LoD4ImplicitRep
-target		:cityobject/{"id"} frn:lod1ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
+mappingId	Bridge Opening - LoD4ImplicitRep
+target		:cityobject/{"id"} brid:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
 source		SELECT "id", "lod4_implicit_rep_id"
-			FROM "city_furniture"
+			FROM "bridge_opening"
 
-mappingId	Room
-target		:cityobject/{"id"} a bldg:Room ; bldg:class {"class"}^^www:XMLSchema#string ; bldg:function {"function"}^^www:XMLSchema#string ; bldg:usage {"usage"}^^www:XMLSchema#string .
-source		SELECT "class", "function", "id", "usage"
-			FROM "room"
+mappingId	Bridge Room
+target		:bridge_room/{"id"} a brid:BridgeRoom ; brid:class {"class"}^^xsd:string ; brid:usage {"usage"}^^xsd:string ; brid:function {"function"}^^xsd:string .
+source		SELECT "bridge_id", "class", "function", "id", "usage"
+			FROM "bridge_room"
 
-mappingId	Room - LoD4Solid
-target		:cityobject/{"id"} bldg:lod4Solid :solidgeometry/{"lod4_solid_id"} .
-source		SELECT "id", "lod4_solid_id"
-			FROM "room"
-
-mappingId	Room - LoD4MultiSurface
-target		:cityobject/{"id"} bldg:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
+mappingId	Bridge Room - LoD4MultiSurface
+target		:bridge_room/{"id"} brid:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
 source		SELECT "id", "lod4_multi_surface_id"
-			FROM "room"
+			FROM "bridge_room"
 
-mappingId	Room - Part of Building
-target		:cityobject/{"building_id"} bldg:consistsOfBuildingPart :room/{"id"} .
-source		SELECT "building_id", "id"
-			FROM "room"
+mappingId	Bridge Room - Interior
+target		:cityobject/{"bridge_id"} brid:interiorBridgeRoom :bridge_room/{"id"} .
+source		SELECT "bridge_id", "id"
+			FROM "bridge_room"
 
-mappingId	City Object
-target		:cityobject/{"id"} a core:_CityObject ; rdfs:label {"name"}^^www:XMLSchema#string ; core:terminationDate {"termination_date"}^^www:XMLSchema#dateTime ; core:creationDate {"creation_date"}^^www:XMLSchema#dateTime .
-source		SELECT "creation_date", "id", "name", "termination_date"
-			FROM "cityobject"
-
-mappingId	City Object - Relative to Terrain
-target		:cityobject/{"id"} core:relativeToTerrain :terraintype/{"relative_to_terrain"} .
-source		SELECT "id", "relative_to_terrain"
-			FROM "cityobject"
-
-mappingId	City Object - Relative to Water
-target		:cityobject/{"id"} core:relativeToWater :watertype/{"relative_to_water"} .
-source		SELECT "id", "relative_to_water"
-			FROM "cityobject"
-
-mappingId	Generic City Object Attribute
-target		:genericcityobject/{"id"} a gen:GenericCityObject ; gen:value {"realval"}^^www:XMLSchema#double ; rdfs:label {"attrname"}^^www:XMLSchema#string ; geo:asWKT {"geomval_wkt"}^^geo:wktLiteral .
-source		SELECT ST_ASTEXT(ST_TRANSFORM(ST_SWAPORDINATES("geomval", 'xy'), 4326)) AS "geomval_wkt", "id", "realval", "attrname"
-			FROM "cityobject_genericattrib"
-
-mappingId	Generic City Object Attribute - Parent
-target		:genericcityobject/{"id"} grp:parent :genericcityobject/{"parent_genattrib_id"} .
-source		SELECT "id", "parent_genattrib_id"
-			FROM "cityobject_genericattrib"
-
-mappingId	Tunnel Hollow Space
-target		:cityobject/{"id"} a tun:HollowSpace ; tun:usage {"usage"}^^www:XMLSchema#string ; tun:class {"class"}^^www:XMLSchema#string ; tun:function {"function"}^^www:XMLSchema#string .
-source		SELECT "class", "function", "id", "usage"
-			FROM "tunnel_hollow_space"
-
-mappingId	Tunnel Hollow Space - LoD4Solid
-target		:cityobject/{"id"} tun:lod4Solid :solidgeometry/{"lod4_solid_id"} .
+mappingId	Bridge Room - LoD4Solid
+target		:bridge_room/{"id"} brid:lod4Solid :solidgeometry/{"lod4_solid_id"} .
 source		SELECT "id", "lod4_solid_id"
-			FROM "tunnel_hollow_space"
+			FROM "bridge_room"
 
-mappingId	Tunnel Hollow Space - LoD4MultiSurface
-target		:cityobject/{"id"} tun:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
-source		SELECT "id", "lod4_multi_surface_id"
-			FROM "tunnel_hollow_space"
+mappingId	Bridge Construction Element - LoD1ImplicitRep
+target		:bridge_constr_element/{"id"} brid:lod1ImplicitRepresentation :geometry/{"lod1_implicit_rep_id"} .
+source		SELECT "id", "lod1_implicit_rep_id"
+			FROM "bridge_constr_element"
 
-mappingId	Tunnel Hollow Space - Consists Of
-target		:cityobject/{"tunnel_id"} tun:consistsOfTunnelPart :hollow_space/{"id"} .
-source		SELECT "id", "tunnel_id"
-			FROM "tunnel_hollow_space"
+mappingId	Bridge Construction Element - LoD2ImplicitRep
+target		:bridge_constr_element/{"id"} brid:lod2ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
+source		SELECT "id", "lod2_implicit_rep_id"
+			FROM "bridge_constr_element"
+
+mappingId	Bridge Construction Element - LoD3ImplicitRep
+target		:bridge_constr_element/{"id"} brid:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
+source		SELECT "id", "lod3_implicit_rep_id"
+			FROM "bridge_constr_element"
+
+mappingId	Bridge Construction Element - LoD4ImplicitRep
+target		:bridge_constr_element/{"id"} brid:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
+source		SELECT "id", "lod4_implicit_rep_id"
+			FROM "bridge_constr_element"
+
+mappingId	Bridge Construction Element - Outer Bridge Construction
+target		:cityobject/{"bridge_id"} brid:outerBridgeConstruction :bridge_constr_element/{"id"} .
+source		SELECT "bridge_id", "id"
+			FROM "bridge_constr_element"
+
+mappingId	Bridge Construction Element
+target		:bridge_constr_element/{"id"} a brid:BridgeConstructionElement .
+source		SELECT "id"
+			FROM "bridge_constr_element"
 
 mappingId	Bridge Installation
-target		:bridge_installation/{"id"} a brid:BridgeInstallation ; brid:function {"function"}^^www:XMLSchema#string ; brid:class {"class"}^^www:XMLSchema#string ; brid:usage {"usage"}^^www:XMLSchema#string .
+target		:bridge_installation/{"id"} a brid:BridgeInstallation ; brid:function {"function"}^^xsd:string ; brid:class {"class"}^^xsd:string ; brid:usage {"usage"}^^xsd:string .
 source		SELECT "class", "function", "id", "usage"
 			FROM "bridge_installation"
 
@@ -643,8 +447,37 @@ target		:bridge_installation/{"id"} brid:lod4ImplicitRepresentation :geometry/{"
 source		SELECT "id", "lod4_implicit_rep_id"
 			FROM "bridge_installation"
 
+; Furniture
+
+mappingId	Furniture
+target		:cityobject/{"id"} a frn:CityFurniture ; frn:usage {"usage"}^^xsd:string ; frn:class {"class"}^^xsd:string ; frn:function {"function"}^^xsd:string .
+source		SELECT "id", "class", "function", "usage"
+			FROM "city_furniture"
+
+mappingId	Furniture - LoD1ImplicitRep
+target		:cityobject/{"id"} frn:lod1ImplicitRepresentation :geometry/{"lod1_implicit_rep_id"} .
+source		SELECT "id", "lod1_implicit_rep_id"
+			FROM "city_furniture"
+
+mappingId	Furniture - LoD2ImplicitRep
+target		:cityobject/{"id"} frn:lod1ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
+source		SELECT "id", "lod2_implicit_rep_id"
+			FROM "city_furniture"
+
+mappingId	Furniture - LoD3ImplicitRep
+target		:cityobject/{"id"} frn:lod1ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
+source		SELECT "id", "lod3_implicit_rep_id"
+			FROM "city_furniture"
+
+mappingId	Furniture - LoD4ImplicitRep
+target		:cityobject/{"id"} frn:lod1ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
+source		SELECT "id", "lod4_implicit_rep_id"
+			FROM "city_furniture"
+
+; LandUse
+
 mappingId	LandUse
-target		:cityobject/{"id"} a luse:LandUse ; luse:usage {"usage"}^^www:XMLSchema#string ; luse:function {"function"}^^www:XMLSchema#string ; luse:class {"class"}^^www:XMLSchema#string .
+target		:cityobject/{"id"} a luse:LandUse ; luse:usage {"usage"}^^xsd:string ; luse:function {"function"}^^xsd:string ; luse:class {"class"}^^xsd:string .
 source		SELECT "class", "function", "id", "lod0_multi_surface_id", "lod1_multi_surface_id", "lod2_multi_surface_id", "lod3_multi_surface_id", "lod4_multi_surface_id", "objectclass_id", "usage"
 			FROM "land_use"
 
@@ -668,8 +501,104 @@ target		:cityobject/{"id"} luse:lod4MultiSurface :geometry/{"lod4_multi_surface_
 source		SELECT "id", "lod4_multi_surface_id"
 			FROM "land_use"
 
+; Plant Cover
+
+mappingId	Plant Cover
+target		:cityobject/{"id"} a veg:PlantCover ; veg:class {"class"}^^xsd:string ; veg:averageHeight {"average_height"}^^xsd:decimal ; veg:function {"function"}^^xsd:string ; veg:usage {"usage"}^^xsd:string .
+source		SELECT "average_height", "class", "function", "id", "usage"
+			FROM "plant_cover"
+
+mappingId	Plant Cover - LoD1MultiSurface
+target		:cityobject/{"id"} veg:lod1MultiSurface :geometry/{"lod1_multi_surface_id"} .
+source		SELECT "id", "lod1_multi_surface_id"
+			FROM "plant_cover"
+
+mappingId	Plant Cover - LoD2MultiSurface
+target		:cityobject/{"id"} veg:lod2MultiSurface :geometry/{"lod2_multi_surface_id"} .
+source		SELECT "id", "lod2_multi_surface_id"
+			FROM "plant_cover"
+
+mappingId	Plant Cover - LoD3MultiSurface
+target		:cityobject/{"id"} veg:lod3MultiSurface :geometry/{"lod3_multi_surface_id"} .
+source		SELECT "id", "lod3_multi_surface_id"
+			FROM "plant_cover"
+
+mappingId	Plant Cover - LoD4MultiSurface
+target		:cityobject/{"id"} veg:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
+source		SELECT "id", "lod4_multi_surface_id"
+			FROM "plant_cover"
+
+mappingId	Plant Cover - LoD1MultiSolid
+target		:cityobject/{"id"} veg:lod1MultiSolid :solidgeometry/{"lod1_multi_solid_id"} .
+source		SELECT "id", "lod1_multi_solid_id"
+			FROM "plant_cover"
+
+mappingId	Plant Cover - LoD2MultiSolid
+target		:cityobject/{"id"} veg:lod2MultiSolid :solidgeometry/{"lod2_multi_solid_id"} .
+source		SELECT "id", "lod2_multi_solid_id"
+			FROM "plant_cover"
+
+mappingId	Plant Cover - LoD3MultiSolid
+target		:cityobject/{"id"} veg:lod3MultiSolid :solidgeometry/{"lod3_multi_solid_id"} .
+source		SELECT "id", "lod3_multi_solid_id"
+			FROM "plant_cover"
+
+mappingId	Plant Cover - LoD4MultiSolid
+target		:cityobject/{"id"} veg:lod4MultiSolid :solidgeometry/{"lod4_multi_solid_id"} .
+source		SELECT "id", "lod4_multi_solid_id"
+			FROM "plant_cover"
+
+; Transportation
+
+mappingId	Transportation - TrafficArea
+target		:traffic_area/{"id"} a tran:TrafficArea ; tran:function {"function"}^^xsd:string ; tran:class {"class"}^^xsd:string ; tran:usage {"usage"}^^xsd:string ; tran:surfaceMaterial {"surface_material"}^^xsd:string .
+source		SELECT "id", "function", "class", "usage", "surface_material"
+			FROM "traffic_area"
+
+mappingId	Transportation - TrafficArea - LoD2MultiSurface
+target		:traffic_area/{"id"} tran:lod2MultiSurface :geometry/{"lod2_multi_surface_id"} .
+source		SELECT "id", "lod2_multi_surface_id"
+			FROM "traffic_area"
+
+mappingId	Transportation - TrafficArea - LoD3MultiSurface
+target		:traffic_area/{"id"} tun:lod3MultiCurve :geometry/{"lod3_multi_surface_id"} .
+source		SELECT "id", "lod3_multi_surface_id"
+			FROM "traffic_area"
+
+mappingId	Transportation - TrafficArea - LoD4MultiSurface
+target		:traffic_area/{"id"} tran:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
+source		SELECT "id", "lod4_multi_surface_id"
+			FROM "traffic_area"
+
+mappingId	Transportation Complex - LoD1MultiSurface
+target		:transportation_complex/{"id"} tran:lod1MultiSurface :geometry/{"lod1_multi_surface_id"} .
+source		SELECT "id", "lod1_multi_surface_id"
+			FROM "transportation_complex"
+
+mappingId	Transportation Complex - LoD2MultiSurface
+target		:transportation_complex/{"id"} tran:lod2MultiSurface :geometry/{"lod2_multi_surface_id"} .
+source		SELECT "id", "lod2_multi_surface_id"
+			FROM "transportation_complex"
+
+mappingId	Transportation Complex - LoD3MultiSurface
+target		:transportation_complex/{"id"} tran:lod3MultiSurface :geometry/{"lod3_multi_surface_id"} .
+source		SELECT "id", "lod3_multi_surface_id"
+			FROM "transportation_complex"
+
+mappingId	Transportation Complex - LoD4MultiSurface
+target		:transportation_complex/{"id"} tran:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
+source		SELECT "id", "lod4_multi_surface_id"
+			FROM "transportation_complex"
+
+mappingId	Transportation Complex
+target		:transportation_complex/{"id"} a tran:TransportationComplex ; tran:function {"function"}^^xsd:string ; tran:class {"class"}^^xsd:string ; tran:usage {"usage"}^^xsd:string .
+source		SELECT "class", "function", "id", "usage"
+			FROM "transportation_complex"
+
+; Tunnel
+
 mappingId	Tunnel
-target		:cityobject/{"id"} a tun:Tunnel ; tun:yearOfConstruction {"year_of_construction"}^^www:XMLSchema#date ; tun:yearOfDemolition {"year_of_demolition"}^^www:XMLSchema#date ; tun:class {"class"}^^www:XMLSchema#string ; tun:function {"function"}^^www:XMLSchema#string ; tun:usage {"usage"}^^www:XMLSchema#string .
+target		:cityobject/{"id"} a tun:Tunnel ; tun:yearOfConstruction {"year_of_construction"}^^xsd:date ; tun:yearOfDemolition {"year_of_demolition"}^^xsd:date ; tun:class {"class"}^^xsd:string ; tun:function {"function"}^^xsd:string ; tun:usage {"usage"}^^xsd:string .
 source		SELECT "class", "function", "id", "lod1_terrain_intersection", "lod2_multi_curve", "lod2_terrain_intersection", "lod3_multi_curve", "lod3_terrain_intersection", "lod4_multi_curve",  "lod4_terrain_intersection", "objectclass_id", "tunnel_parent_id", "tunnel_root_id", "usage", "year_of_construction", "year_of_demolition"
 			FROM "tunnel"
 
@@ -718,28 +647,85 @@ target		:cityobject/{"id"} tun:lod4Solid :solidgeometry/{"lod4_solid_id"} .
 source		SELECT "id", "lod4_solid_id"
 			FROM "tunnel"
 
-mappingId	Transportation - TrafficArea
-target		:traffic_area/{"id"} a tran:TrafficArea ; tran:function {"function"}^^www:XMLSchema#string ; tran:class {"class"}^^www:XMLSchema#string ; tran:usage {"usage"}^^www:XMLSchema#string ; tran:surfaceMaterial {"surface_material"}^^www:XMLSchema#string .
-source		SELECT "id", "function", "class", "usage", "surface_material"
-			FROM "traffic_area"
+mappingId	Tunnel Furniture
+target		:cityobject/{"id"} a tun:TunnelFurniture ; frn:function {"function"}^^xsd:string ; frn:usage {"usage"}^^xsd:string ; frn:class {"class"}^^xsd:string .
+source		SELECT "class", "function", "id", "usage"
+			FROM "tunnel_furniture"
 
-mappingId	Transportation - TrafficArea - LoD2MultiSurface
-target		:traffic_area/{"id"} tran:lod2MultiSurface :geometry/{"lod2_multi_surface_id"} .
-source		SELECT "id", "lod2_multi_surface_id"
-			FROM "traffic_area"
+mappingId	Tunnel Furniture - LoD4ImplRep
+target		:cityobject/{"id"} tun:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
+source		SELECT "id", "lod4_implicit_rep_id"
+			FROM "tunnel_furniture"
 
-mappingId	Transportation - TrafficArea - LoD3MultiSurface
-target		:traffic_area/{"id"} tun:lod3MultiCurve :geometry/{"lod3_multi_surface_id"} .
-source		SELECT "id", "lod3_multi_surface_id"
-			FROM "traffic_area"
+mappingId	Tunnel Furniture - Hollow Space
+target		:cityobject/{"id"} tun:interiorHollowSpace :hollow_space/{"tunnel_hollow_space_id"} .
+source		SELECT "id", "tunnel_hollow_space_id"
+			FROM "tunnel_furniture"
 
-mappingId	Transportation - TrafficArea - LoD4MultiSurface
-target		:traffic_area/{"id"} tran:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
+mappingId	Tunnel Hollow Space
+target		:cityobject/{"id"} a tun:HollowSpace ; tun:usage {"usage"}^^xsd:string ; tun:class {"class"}^^xsd:string ; tun:function {"function"}^^xsd:string .
+source		SELECT "class", "function", "id", "usage"
+			FROM "tunnel_hollow_space"
+
+mappingId	Tunnel Hollow Space - LoD4Solid
+target		:cityobject/{"id"} tun:lod4Solid :solidgeometry/{"lod4_solid_id"} .
+source		SELECT "id", "lod4_solid_id"
+			FROM "tunnel_hollow_space"
+
+mappingId	Tunnel Hollow Space - LoD4MultiSurface
+target		:cityobject/{"id"} tun:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
 source		SELECT "id", "lod4_multi_surface_id"
-			FROM "traffic_area"
+			FROM "tunnel_hollow_space"
+
+mappingId	Tunnel Hollow Space - Consists Of
+target		:cityobject/{"tunnel_id"} tun:consistsOfTunnelPart :hollow_space/{"id"} .
+source		SELECT "id", "tunnel_id"
+			FROM "tunnel_hollow_space"
+
+mappingId	Tunnel Installation
+target		:cityobject/{"id"} a tun:TunnelInstallation ; tun:class {"class"}^^xsd:string ; tun:usage {"usage"}^^xsd:string ; tun:function {"function"}^^xsd:string .
+source		SELECT "class", "function", "id", "usage"
+			FROM "tunnel_installation"
+
+mappingId	Tunnel Installation - LoD2ImplicitRep
+target		:cityobject/{"id"} tun:lod2ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
+source		SELECT "id", "lod2_implicit_rep_id"
+			FROM "tunnel_installation"
+
+mappingId	Tunnel Installation - LoD3ImplicitRep
+target		:cityobject/{"id"} tun:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
+source		SELECT "id", "lod3_implicit_rep_id"
+			FROM "tunnel_installation"
+
+mappingId	Tunnel Installation - LoD4ImplicitRep
+target		:cityobject/{"id"} tun:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
+source		SELECT "id", "lod4_implicit_rep_id"
+			FROM "tunnel_installation"
+
+mappingId	Tunnel Installation - Hollow Space
+target		:cityobject/{"id"} tun:hollowSpaceInstallation :hollow_space/{"tunnel_hollow_space_id"} .
+source		SELECT "id", "tunnel_hollow_space_id"
+			FROM "tunnel_installation"
+
+mappingId	Tunnel Opening
+target		:cityobject/{"id"} a tun:_Opening .
+source		SELECT "id"
+			FROM "tunnel_opening"
+
+mappingId	Tunnel Opening - LoD3MultiSurface
+target		:cityobject/{"id"} tun:lod3MultiSurface :geometry/{"lod3_multi_surface_id"} .
+source		SELECT "id", "lod3_multi_surface_id"
+			FROM "tunnel_opening"
+
+mappingId	Tunnel Opening - LoD4MultiSurface
+target		:cityobject/{"id"} tun:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
+source		SELECT "id", "lod4_multi_surface_id"
+			FROM "tunnel_opening"
+
+; Vegetation
 
 mappingId	Vegetation
-target		:vegetation/{"id"} a veg:SolitaryVegetationObject ; veg:trunkDiameter {"trunk_diameter"}^^www:XMLSchema#decimal ; veg:height {"height"}^^www:XMLSchema#decimal ; veg:function {"function"}^^www:XMLSchema#string ; veg:class {"class"}^^www:XMLSchema#string ; veg:species {"species"}^^www:XMLSchema#string ; veg:crownDiameter {"crown_diameter"}^^www:XMLSchema#decimal ; veg:usage {"usage"}^^www:XMLSchema#string .
+target		:vegetation/{"id"} a veg:SolitaryVegetationObject ; veg:trunkDiameter {"trunk_diameter"}^^xsd:decimal ; veg:height {"height"}^^xsd:decimal ; veg:function {"function"}^^xsd:string ; veg:class {"class"}^^xsd:string ; veg:species {"species"}^^xsd:string ; veg:crownDiameter {"crown_diameter"}^^xsd:decimal ; veg:usage {"usage"}^^xsd:string .
 source		SELECT "class", "crown_diameter", "crown_diameter_unit", "function", "height", "height_unit", "id", "lod1_implicit_ref_point", "lod1_other_geom", "lod2_brep_id", "lod2_implicit_ref_point", "lod2_other_geom", "lod3_brep_id", "lod3_implicit_ref_point", "lod3_other_geom", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_other_geom", "objectclass_id", "species", "trunk_diameter", "trunk_diameter_unit", "usage"
 			FROM "solitary_vegetat_object"
 
@@ -763,8 +749,10 @@ target		:vegetation/{"id"} veg:lod3ImplicitRepresentation :geometry/{"lod4_impli
 source		SELECT "lod4_implicit_rep_id", "id"
 			FROM "solitary_vegetat_object"
 
+; WaterBody
+
 mappingId	WaterBody
-target		:cityobject/{"id"} a wtr:WaterBody ; wtr:class {"class"}^^www:XMLSchema#string ; wtr:function {"function"}^^www:XMLSchema#string ; wtr:usage {"usage"}^^www:XMLSchema#string .
+target		:cityobject/{"id"} a wtr:WaterBody ; wtr:class {"class"}^^xsd:string ; wtr:function {"function"}^^xsd:string ; wtr:usage {"usage"}^^xsd:string .
 source		SELECT "class", "function", "id", "usage"
 			FROM "waterbody"
 
@@ -799,7 +787,7 @@ source		SELECT "id", "lod4_solid_id"
 			FROM "waterbody"
 
 mappingId	WaterBoundary
-target		:cityobject/{"id"} a wtr:_WaterBoundarySurface ; wtr:waterLevel {"water_level"}^^www:XMLSchema#decimal .
+target		:cityobject/{"id"} a wtr:_WaterBoundarySurface ; wtr:waterLevel {"water_level"}^^xsd:decimal .
 source		SELECT "id", "water_level", "water_level_codespace"
 			FROM "waterboundary_surface"
 
@@ -819,64 +807,70 @@ source		SELECT "id", "lod4_surface_id"
 			FROM "waterboundary_surface"
 
 mappingId	_CityObject
-target		:cityobject/{"id"} a core:_CityObject ; rdfs:label {"name"}^^www:XMLSchema#string ; core:externalReference {"uri"}^^www:XMLSchema#string .
+target		:cityobject/{"id"} a core:_CityObject ; rdfs:label {"name"}^^xsd:string ; core:externalReference {"uri"}^^xsd:string .
 source		SELECT "cityobject_id", "id", "infosys", "name", "uri"
 			FROM "external_reference"
 
 mappingId	Relief Feature
-target		:cityobject/{"id"} a dem:ReliefFeature ; dem:lod {"lod"}^^www:XMLSchema#decimal .
+target		:cityobject/{"id"} a dem:ReliefFeature ; dem:lod {"lod"}^^xsd:decimal .
 source		SELECT "id", "lod", "objectclass_id"
 			FROM "relief_feature"
-
-mappingId	Bridge Construction Element - LoD1ImplicitRep
-target		:bridge_constr_element/{"id"} brid:lod1ImplicitRepresentation :geometry/{"lod1_implicit_rep_id"} .
-source		SELECT "id", "lod1_implicit_rep_id"
-			FROM "bridge_constr_element"
-
-mappingId	Bridge Construction Element - LoD2ImplicitRep
-target		:bridge_constr_element/{"id"} brid:lod2ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
-source		SELECT "id", "lod2_implicit_rep_id"
-			FROM "bridge_constr_element"
-
-mappingId	Bridge Construction Element - LoD3ImplicitRep
-target		:bridge_constr_element/{"id"} brid:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
-source		SELECT "id", "lod3_implicit_rep_id"
-			FROM "bridge_constr_element"
-
-mappingId	Bridge Construction Element - LoD4ImplicitRep
-target		:bridge_constr_element/{"id"} brid:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
-source		SELECT "id", "lod4_implicit_rep_id"
-			FROM "bridge_constr_element"
-
-mappingId	Bridge Construction Element - Outer Bridge Construction
-target		:cityobject/{"bridge_id"} brid:outerBridgeConstruction :bridge_constr_element/{"id"} .
-source		SELECT "bridge_id", "id"
-			FROM "bridge_constr_element"
-
-mappingId	Bridge Construction Element
-target		:bridge_constr_element/{"id"} a brid:BridgeConstructionElement .
-source		SELECT "id"
-			FROM "bridge_constr_element"
-
-mappingId	Tunnel Opening
-target		:cityobject/{"id"} a tun:_Opening .
-source		SELECT "id"
-			FROM "tunnel_opening"
-
-mappingId	Tunnel Opening - LoD3MultiSurface
-target		:cityobject/{"id"} tun:lod3MultiSurface :geometry/{"lod3_multi_surface_id"} .
-source		SELECT "id", "lod3_multi_surface_id"
-			FROM "tunnel_opening"
-
-mappingId	Tunnel Opening - LoD4MultiSurface
-target		:cityobject/{"id"} tun:lod4MultiSurface :geometry/{"lod4_multi_surface_id"} .
-source		SELECT "id", "lod4_multi_surface_id"
-			FROM "tunnel_opening"
 
 mappingId	Group to city Object
 target		:cityobject/{"cityobject_id"} grp:groupMember :cityobject/{"cityobjectgroup_id"} .
 source		SELECT "cityobject_id", "cityobjectgroup_id", "role"
 			FROM "group_to_cityobject"
+
+; City Model
+
+mappingId	City Model
+target		:citymodel/{"id"} a core:CityModel ; rdfs:label {"name"}^^xsd:string ; core:creationDate {"creation_date"}^^xsd:dateTime ; core:terminationDate {"termination_date"}^^xsd:dateTime ; geo:asWKT {"envelope_wkt"}^^geo:wktLiteral .
+source		SELECT "creation_date", ST_ASTEXT(ST_TRANSFORM(ST_SWAPORDINATES("envelope", 'xy'), 4326)) AS "envelope_wkt", "id", "name", "termination_date"
+			FROM "citymodel"
+
+; City Object
+
+mappingId	City Object
+target		:cityobject/{"id"} a core:_CityObject ; rdfs:label {"name"}^^xsd:string ; core:terminationDate {"termination_date"}^^xsd:dateTime ; core:creationDate {"creation_date"}^^xsd:dateTime .
+source		SELECT "creation_date", "id", "name", "termination_date"
+			FROM "cityobject"
+
+mappingId	City Object - Relative to Terrain
+target		:cityobject/{"id"} core:relativeToTerrain :terraintype/{"relative_to_terrain"} .
+source		SELECT "id", "relative_to_terrain"
+			FROM "cityobject"
+
+mappingId	City Object - Relative to Water
+target		:cityobject/{"id"} core:relativeToWater :watertype/{"relative_to_water"} .
+source		SELECT "id", "relative_to_water"
+			FROM "cityobject"
+
+mappingId	Generic City Object Attribute
+target		:genericcityobject/{"id"} a gen:GenericCityObject ; gen:value {"realval"}^^xsd:double ; rdfs:label {"attrname"}^^xsd:string ; geo:asWKT {"geomval_wkt"}^^geo:wktLiteral .
+source		SELECT ST_ASTEXT(ST_TRANSFORM(ST_SWAPORDINATES("geomval", 'xy'), 4326)) AS "geomval_wkt", "id", "realval", "attrname"
+			FROM "cityobject_genericattrib"
+
+mappingId	Generic City Object Attribute - Parent
+target		:genericcityobject/{"id"} grp:parent :genericcityobject/{"parent_genattrib_id"} .
+source		SELECT "id", "parent_genattrib_id"
+			FROM "cityobject_genericattrib"
+
+mappingId	City Object Generalization
+target		:cityobject/{"cityobject_id"} core:generalizesTo :cityobject/{"generalizes_to_id"} .
+source		SELECT "cityobject_id", "generalizes_to_id"
+			FROM "generalization"
+
+; Relief
+
+mappingId	Masspoint Relief
+target		:masspoint_relief/{"id"} a dem:MassPointRelief .
+source		SELECT "id", "objectclass_id", "relief_points"
+			FROM "masspoint_relief"
+
+mappingId	Relief Feature to Relative Component
+target		:cityobject/{"relief_feature_id"} dem:reliefComponent :relief_component/{"relief_component_id"} .
+source		SELECT "relief_component_id", "relief_feature_id"
+			FROM "relief_feat_to_rel_comp"
 
 mappingId	Breakline relief
 target		:breakline_relief/{"id"} a dem:BreaklineRelief ; geo:asWKT {"break_lines_wkt"}^^geo:wktLiteral .
@@ -884,29 +878,70 @@ source		SELECT "break_lines", ST_ASTEXT(ST_TRANSFORM(ST_SWAPORDINATES("break_lin
 			FROM "breakline_relief"
 
 mappingId	Raster Relief
-target		:raster_relief/{"id"} a dem:RasterRelief ; dem:rasterURI {"raster_uri"}^^www:XMLSchema#string .
+target		:raster_relief/{"id"} a dem:RasterRelief ; dem:rasterURI {"raster_uri"}^^xsd:string .
 source		SELECT "coverage_id", "id", "objectclass_id", "raster_uri"
 			FROM "raster_relief"
 
-mappingId	Address to bridge
-target		:cityobject/{"bridge_id"} brid:address :address/{"address_id"} .
-source		SELECT "address_id", "bridge_id"
-			FROM "address_to_bridge"
+mappingId	TIN Relief
+target		:tin_relief/{"id"} a dem:TINRelief .
+source		SELECT "id"
+			FROM "tin_relief"
 
-mappingId	Building Furniture
-target		:cityobject/{"id"} a bldg:BuildingFurniture ; bldg:class {"class"}^^www:XMLSchema#string ; bldg:usage {"usage"}^^www:XMLSchema#string ; bldg:function {"function"}^^www:XMLSchema#string .
-source		SELECT "class", "function", "id", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "objectclass_id", "room_id", "usage"
-			FROM "building_furniture"
+mappingId	Grid Coverage
+target		:raster_relief/{"id"} a dem:RasterRelief .
+source		SELECT "id", "rasterproperty"
+			FROM "grid_coverage"
 
-mappingId	Building Furniture - LoD4ImplicitRep
-target		:cityobject/{"id"} bldg:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
+mappingId	Relief Component
+target		:relief_component/{"id"} a dem:_ReliefComponent ; dem:lod {"lod"}^^xsd:decimal .
+source		SELECT "extent", "id", "lod"
+			FROM "relief_component"
+
+; Implicit Geometry
+
+mappingId	Implicit Geometry
+target		:geometry/{"id"} a core:ImplicitGeometry ; core:libraryObject {"library_object"}^^xsd:hexBinary ; core:mimeType {"mime_type"}^^xsd:string .
+source		SELECT "id", "library_object", "mime_type", "reference_to_library", "relative_brep_id", "relative_other_geom"
+			FROM "implicit_geometry"
+
+; GML and Generic Objects
+
+mappingId	gml Object
+target		:object/{"id"} a gml:_Object ; grp:class {"classname"}^^xsd:string .
+source		SELECT "classname", "id"
+			FROM "objectclass"
+
+mappingId	Generic City Object
+target		:genericcityobject/{"id"} a gen:GenericCityObject ; gen:usage {"usage"}^^xsd:string ; gen:class {"class"}^^xsd:string ; gen:function {"function"}^^xsd:string .
+source		SELECT "class", "function", "id", "lod0_brep_id", "lod0_implicit_ref_point", "lod0_implicit_rep_id", "lod0_implicit_transformation", "lod0_other_geom", "lod0_terrain_intersection", "lod1_brep_id", "lod1_implicit_ref_point", "lod1_implicit_rep_id", "lod1_implicit_transformation", "lod1_other_geom", "lod1_terrain_intersection", "lod2_brep_id", "lod2_implicit_ref_point", "lod2_implicit_rep_id", "lod2_implicit_transformation", "lod2_other_geom", "lod2_terrain_intersection", "lod3_brep_id", "lod3_implicit_ref_point", "lod3_implicit_rep_id", "lod3_implicit_transformation", "lod3_other_geom", "lod3_terrain_intersection", "lod4_brep_id", "lod4_implicit_ref_point", "lod4_implicit_rep_id", "lod4_implicit_transformation", "lod4_other_geom", "lod4_terrain_intersection", "objectclass_id", "usage"
+			FROM "generic_cityobject"
+
+mappingId	Generic City Object - LoD0ImplicitRep
+target		:genericcityobject/{"id"} gen:lod0ImplicitRepresentation :geometry/{"lod0_implicit_rep_id"} .
+source		SELECT "id", "lod0_implicit_rep_id"
+			FROM "generic_cityobject"
+
+mappingId	Generic City Object - LoD1ImplicitRep
+target		:genericcityobject/{"id"} gen:lod1ImplicitRepresentation :geometry/{"lod1_implicit_rep_id"} .
+source		SELECT "id", "lod1_implicit_rep_id"
+			FROM "generic_cityobject"
+
+mappingId	Generic City Object - LoD2ImplicitRep
+target		:genericcityobject/{"id"} gen:lod2ImplicitRepresentation :geometry/{"lod2_implicit_rep_id"} .
+source		SELECT "id", "lod2_implicit_rep_id"
+			FROM "generic_cityobject"
+
+mappingId	Generic City Object - LoD3ImplicitRep
+target		:genericcityobject/{"id"} gen:lod3ImplicitRepresentation :geometry/{"lod3_implicit_rep_id"} .
+source		SELECT "id", "lod3_implicit_rep_id"
+			FROM "generic_cityobject"
+
+mappingId	Generic City Object - LoD4ImplicitRep
+target		:genericcityobject/{"id"} gen:lod4ImplicitRepresentation :geometry/{"lod4_implicit_rep_id"} .
 source		SELECT "id", "lod4_implicit_rep_id"
-			FROM "building_furniture"
+			FROM "generic_cityobject"
 
-mappingId	Building Furniture - Interior Room
-target		:cityobject/{"id"} bldg:interiorRoom :room/{"room_id"} .
-source		SELECT "id", "room_id"
-			FROM "building_furniture"
+; OSM class and id association
 
 mappingId	Association_OSM_Class
 target		:osmlink/{id} a :Association_OSM_Class .
@@ -940,6 +975,8 @@ mappingId	Association_HasOSMClassName
 target		lgdo:osmclassid/{class_id} a lgdo:{class_name} .
 source		SELECT *
 			FROM public.classes
+
+; OSM classes
 
 mappingId	lgd_nodes_properties
 target		lgd:node{osm_id} rdfs:label {name}^^xsd:string , {name_en}@en , {name_de}@de , {name_fr}@fr , {name_it}@it ; lgdo:height {height}^^xsd:string ; lgdo:addr_city {city}^^xsd:string ; lgdo:addr_country {country}^^xsd:string ; lgdo:addr_housenumber {housenumber}^^xsd:string ; lgdo:addr_street {street}^^xsd:string ; lgdo:postCode {postcode}^^xsd:string ; lgdo:addr_place {place}^^xsd:string .
@@ -994,6 +1031,8 @@ target		lgdg:relation{osm_id} a geo:Geometry ; geo:asWKT {wkt}^^geo:wktLiteral .
 source		SELECT osm_id, ST_ASTEXT(geom) AS wkt
 			FROM public.entities
 			WHERE osm_type='R'
+
+; CityGML-OSM matches and adjacencies
 
 mappingId	Association_CityGML_OSM
 target		:linkage/{id} a :Association_CityGML_OSM .

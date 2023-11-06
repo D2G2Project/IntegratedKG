@@ -2,27 +2,17 @@ title="CityGML-OSM Munich example queries"
 
 [defaultTab]
 query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX lgdo: <http://linkedgeodata.org/ontology/>
 
-# Q1: Get all hotels over 30m high
-SELECT *
+# Q1: Find the addresses of buildings with height above 30 meters
+SELECT ?address_label
 {
-?linkage a :Association_CityGML_OSM .
-?linkage :matchOSM ?osmentity .
-?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
-?osmlinkage a :Association_OSM_Class .
-?osmlinkage :hasosmid ?osmentity .
-?osmlinkage :hasosmclassid ?osmclassname .
-?osmclassname a lgdo:Hotel .
-    OPTIONAL { ?osmentity rdfs:label ?hotelname .}
-?citygmlentity bldg:measuredHeight ?buildingHeight .
+?building bldg:address ?address_id .
+?address_id rdfs:label ?address_label .
+?building bldg:measuredHeight ?buildingHeight .
 FILTER(?buildingHeight > 30) .
-?citygmlentity bldg:lod2Solid ?solid .
-?solid geo:asWKT ?citygmlGeom .
 }
 """
 
@@ -32,299 +22,9 @@ name="Examples"
 
 [[tabGroups.tabs]]
 
-name="Hotels over 30m high"
-query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX lgdo: <http://linkedgeodata.org/ontology/>
-
-# Q1: Get all hotels over 30m high
-SELECT *
-{
-?linkage a :Association_CityGML_OSM .
-?linkage :matchOSM ?osmentity .
-?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
-?osmlinkage a :Association_OSM_Class .
-?osmlinkage :hasosmid ?osmentity .
-?osmlinkage :hasosmclassid ?osmclassname .
-?osmclassname a lgdo:Hotel .
-    OPTIONAL { ?osmentity rdfs:label ?hotelname .}
-?citygmlentity bldg:measuredHeight ?buildingHeight .
-FILTER(?buildingHeight > 30) .
-?citygmlentity bldg:lod2Solid ?solid .
-?solid geo:asWKT ?citygmlGeom .
-}
-"""
-
-[[tabGroups.tabs]]
-
-name="Building address"
-query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-# Q2: Get building addresses
-SELECT *
-{
-?building bldg:address ?address_id .
-?address_id rdfs:label ?address_label .
-FILTER(CONTAINS(?address_label, "Stephansplatz")) .
-# EPSG:25832 used
-?building bldg:lod2Solid ?solid .
-?solid geo:asWKT ?geom .
-}
-"""
-
-[[tabGroups.tabs]]
-
-name="Buildings over 40m"
-query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-# Q3: Get buildings with height over 40m
-SELECT *
-{
-?building a bldg:Building .
-?building bldg:measuredHeight ?buildingHeight .
-# Get buildings over 40 meters
-FILTER(?buildingHeight > 40) .
-?building bldg:address ?address_id .
-?address_id rdfs:label ?address_label .
-# EPSG:25832 used
-?building bldg:lod2Solid ?solid .
-?solid geo:asWKT ?geom .
-}
-"""
-
-
-[[tabGroups.tabs]]
-
-name="Buildings with most roof surfaces"
-query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-# Q4: Get buildings with most roof surfaces
-SELECT ?building (COUNT(?surface) AS ?totalsurface)
-{
-?building a bldg:Building .
-?building bldg:boundedBy ?surface .
-?surface a bldg:RoofSurface .
-}
-GROUP BY ?building
-ORDER BY DESC(?totalsurface)
-"""
-
-[[tabGroups.tabs]]
-
-name="Mapped roofs"
-query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-# Q5: Map roof surfaces of buildings over 35m
-SELECT ?geom
-{
-?building a bldg:Building .
-?building bldg:measuredHeight ?buildingHeight .
-FILTER(?buildingHeight > 35) .
-?building bldg:boundedBy ?surface .
-?surface a bldg:RoofSurface .
-?surface geo:hasGeometry/geo:asWKT ?geom .
-}
-"""
-
-
-[[tabGroups.tabs]]
-
-name="CityGML surfaces and OSM geometries"
-query="""
-PREFIX lgd: <http://linkedgeodata.org/triplify/>
-PREFIX lg: <https://purl.org/lg/>
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX lgdo: <http://linkedgeodata.org/ontology/>
-
-# Q6: Get citygml surfaces and osm building geometries
-SELECT *
-{
-?linkage a :Association_CityGML_OSM .
-?linkage :matchOSM ?osmentity .
-?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
-?citygmlentity bldg:measuredHeight ?citygmlBuildingHeight .
-FILTER(?citygmlBuildingHeight > 10) .
-
-OPTIONAL { ?osmentity lgdo:height ?osmBuildingHeight . }
-#NOTE: OSM data on building height is missing and often not numeric
-#FILTER(?osmBuildingHeight > 10) .
-
-# For this query, we look at all building surfaces, rather than solids
-# Yasgui cannot visualize polyhedral surfaces
-?citygmlentity bldg:boundedBy ?citygmlsurface .
-#NOTE: We can optionally select only Ground, Roof, Wall etc. surfaces via the following line:
-#?citygmlsurface a bldg:GroundSurface .
-#NOTE: Not all building surfaces seem to fall under the above categories following an inspection
-?citygmlsurface geo:hasGeometry/geo:asWKT ?citygmlGeom .
-BIND("chlorophyll,0.5" AS ?citygmlGeomColor) # Green
-?osmentity geo:hasGeometry/geo:asWKT ?osmGeom .
-BIND("jet,0.8" AS ?osmGeomColor) # Red
-}
-"""
-
-
-[[tabGroups.tabs]]
-
-name="CityGML solid geometries and OSM 2D geometries"
-query="""
-PREFIX lgd: <http://linkedgeodata.org/triplify/>
-PREFIX lg: <https://purl.org/lg/>
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX lgdo: <http://linkedgeodata.org/ontology/>
-
-# NOTE: Yasgui (even 3D plugin) cannot visualize polyhedral surfaces geometries
-# Q7: Get citygml solids and osm building geometries
-SELECT *
-{
-?linkage a :Association_CityGML_OSM .
-?linkage :matchOSM ?osmentity .
-?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
-?citygmlentity bldg:measuredHeight ?citygmlBuildingHeight .
-FILTER(?citygmlBuildingHeight > 10) .
-OPTIONAL { ?osmentity lgdo:height ?osmBuildingHeight . }
-#FILTER(?osmBuildingHeight > 10) .
-?citygmlentity bldg:lod2Solid ?solid .
-?solid geo:asWKT ?citygmlGeom .
-BIND("chlorophyll,0.5" AS ?citygmlGeomColor) # Green
-?osmentity geo:hasGeometry/geo:asWKT ?osmGeom .
-BIND("jet,0.8" AS ?osmGeomColor) # Red
-}
-"""
-
-
-
-[[tabGroups]]
-
-name="More realistic queries"
-
-[[tabGroups.tabs]]
-name="CityGML buildings affected by road expansion"
-query="""
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX lgdo: <http://linkedgeodata.org/ontology/>
-PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
-
-# Q8: When a road need to be extended and the affected buildings need to be removed. Calculate the volume/area that needs to be torn down.
-SELECT ?citygmlGeom ?citygmlGeomAreaSqm
-{
-# Filter highways of interest
-?osmlinkage a :Association_OSM_Class .
-?osmlinkage :hasosmid ?osmentity .
-?osmlinkage :hasosmclassid ?osmclassname .
-VALUES ?highwayclasses { lgdo:SecondaryHighway lgdo:TertiaryHighway lgdo:HighwayService lgdo:UnclassifiedHighway } .
-?osmclassname rdf:type ?highwayclasses .
-?osmentity geo:hasGeometry/geo:asWKT ?osmGeom .
-# Set impact area buffer
-BIND(geof:buffer(?osmGeom, 20, uom:metre) AS ?impactArea) .
-?citygmlentity bldg:boundedBy ?citygmlsurface .
-?citygmlsurface a bldg:GroundSurface .
-?citygmlsurface geo:hasGeometry/geo:asWKT ?citygmlGeom .
-
-# Filter buildings within range of impact area
-FILTER(geof:sfIntersects(?impactArea, ?citygmlGeom))
-?citygmlsurface geo:hasGeometry/geo:hasMetricArea ?citygmlGeomAreaSqm .
-}
-"""
-
-
-[[tabGroups.tabs]]
-name="CityGML buildings affected by hurricane flooding"
-query="""
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX lgdo: <http://linkedgeodata.org/ontology/>
-PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
-
-# Q9: When a hurricane passes through a city, people in (residential) building above XX meters need to be evacuated. Which are the building that is affected?
-SELECT *
-{
-?linkage a :Association_CityGML_OSM .
-?linkage :matchOSM ?osmentity .
-?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
-?osmlinkage a :Association_OSM_Class .
-?osmlinkage :hasosmid ?osmentity .
-?osmlinkage :hasosmclassid ?osmclassname .
-#NOTE: Residential categorization might need expansion
-VALUES ?highwayclasses { lgdo:Residential lgdo:ResidentialHome lgdo:BuildingResidential lgdo:ApartmentBuilding lgdo:House } .
-?osmclassname rdf:type ?highwayclasses .
-?citygmlentity bldg:measuredHeight ?buildingHeight .
-FILTER(?buildingHeight > 15) .
-?citygmlentity bldg:boundedBy ?citygmlsurface .
-#NOTE: We can optionally select only Ground, Roof, Wall etc. surfaces, or not filter at all
-?citygmlsurface a bldg:GroundSurface .
-?citygmlsurface geo:hasGeometry/geo:asWKT ?citygmlGeom .
-BIND("chlorophyll,0.5" AS ?citygmlGeomColor) # Green
-}
-"""
-
-[[tabGroups.tabs]]
-name="CityGML buildings affected by heavy snow"
-query="""
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
-PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-# Q10: Heavy snow is dangerous for flat roofs/at certain angles. Which buildings are possibly affected?
-SELECT *
-{
-?citygmlentity bldg:roofSurface/bldg:roofType ?roofType .
-FILTER(?roofType = "flat roof") .
-?citygmlentity bldg:boundedBy ?citygmlsurface .
-# NOTE: We only care about RoofSurface
-?citygmlsurface a bldg:RoofSurface .
-?citygmlsurface geo:hasGeometry/geo:asWKT ?citygmlGeom .
-BIND("jet,0.8" AS ?citygmlGeomColor) # Red
-}
-"""
-
-[[tabGroups]]
-
-name="Final experiments"
-
-[[tabGroups.tabs]]
-
 name="Q1: Building addresses"
 query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
@@ -342,7 +42,7 @@ FILTER(?buildingHeight > 30) .
 
 name="Q2: Filter building addresses"
 query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
@@ -359,7 +59,7 @@ FILTER(CONTAINS(?address_label, "Stephansplatz")) .
 
 name="Q3: Buildings with most roof surfaces"
 query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 
 # Q3: Find 10 buildings that have the maximum number of roof surfaces
@@ -378,7 +78,7 @@ LIMIT 10
 
 name="Q4: Roof Surfaces"
 query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
@@ -398,7 +98,7 @@ BIND("chlorophyll,0.5" AS ?citygmlGeomColor) # Green
 
 name="Q5: 3D Geometries"
 query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
@@ -417,16 +117,16 @@ BIND("chlorophyll,0.5" AS ?citygmlGeomColor) # Green
 
 name="Q6: Building Geometries in CityGML and OSM"
 query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
 # Q6: Find CityGML ground surfaces and OSM building polygons for buildings over 30 meters (comparison of different geospatial data for quality analysis)
 SELECT ?citygmlGeom ?osmGeom
 {
-?linkage a :Association_CityGML_OSM .
-?linkage :matchOSM ?osmentity .
-?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
+?linkage a d2g2:Association_CityGML_OSM .
+?linkage d2g2:matchOSM ?osmentity .
+?linkage d2g2:matchCityGML/d2g2:mapSurface/bldg:bounds ?citygmlentity .
 ?citygmlentity bldg:measuredHeight ?citygmlBuildingHeight .
 FILTER(?citygmlBuildingHeight > 30) .
 ?citygmlentity bldg:boundedBy ?citygmlsurface .
@@ -442,7 +142,7 @@ BIND("jet,0.8" AS ?osmGeomColor) # Red
 
 name="Q7: Hotels"
 query="""
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -451,12 +151,12 @@ PREFIX lgdo: <http://linkedgeodata.org/ontology/>
 # Q7: Find hotels over 30 meters high (tourists want to have a skyline view of the city)
 SELECT ?citygmlentity ?buildingHeight ?hotelname ?citygmlGeom
 {
-?linkage a :Association_CityGML_OSM .
-?linkage :matchOSM ?osmentity .
-?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
-?osmlinkage a :Association_OSM_Class .
-?osmlinkage :hasosmid ?osmentity .
-?osmlinkage :hasosmclassid ?osmclassname .
+?linkage a d2g2:Association_CityGML_OSM .
+?linkage d2g2:matchOSM ?osmentity .
+?linkage d2g2:matchCityGML/d2g2:mapSurface/bldg:bounds ?citygmlentity .
+?osmlinkage a d2g2:Association_OSM_Class .
+?osmlinkage d2g2:hasosmid ?osmentity .
+?osmlinkage d2g2:hasosmclassid ?osmclassname .
 ?osmclassname a lgdo:Hotel .
     OPTIONAL { ?osmentity rdfs:label ?hotelname .}
 ?citygmlentity bldg:measuredHeight ?buildingHeight .
@@ -470,7 +170,7 @@ FILTER(?buildingHeight > 30) .
 name="Q8: Emergency evacuation"
 query="""
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
@@ -481,13 +181,13 @@ PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
 # Q8: Find residential buildings under 3m high (emergency evacuation to flood disaster)
 SELECT ?citygmlentity ?citygmlGeom
 {
-?linkage a :Association_CityGML_OSM .
-?linkage :matchOSM ?osmentity .
-?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
-?osmlinkage a :Association_OSM_Class .
-?osmlinkage :hasosmid ?osmentity .
-?osmlinkage :hasosmclassid ?osmclassname .
-#NOTE: Residential categorization might need expansion
+?linkage a d2g2:Association_CityGML_OSM .
+?linkage d2g2:matchOSM ?osmentity .
+?linkage d2g2:matchCityGML/d2g2:mapSurface/bldg:bounds ?citygmlentity .
+?osmlinkage a d2g2:Association_OSM_Class .
+?osmlinkage d2g2:hasosmid ?osmentity .
+?osmlinkage d2g2:hasosmclassid ?osmclassname .
+#NOTE: Residential categorization used
 VALUES ?residentialclasses { lgdo:Residential lgdo:ResidentialHome lgdo:BuildingResidential lgdo:ApartmentBuilding lgdo:House } .
 ?osmclassname rdf:type ?residentialclasses .
 ?citygmlentity bldg:measuredHeight ?buildingHeight .
@@ -505,7 +205,7 @@ BIND("chlorophyll,0.5" AS ?citygmlGeomColor) # Green
 name="Q9: Non flat roofs"
 query="""
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
@@ -515,13 +215,13 @@ PREFIX lgdo: <http://linkedgeodata.org/ontology/>
 # Q9: Find residential buildings with non-flat roofs (searching for potential roofs for PV)
 SELECT ?citygmlGeom ?roofType
 {
-?linkage a :Association_CityGML_OSM .
-?linkage :matchOSM ?osmentity .
-?linkage :matchCityGML/:mapSurface/bldg:bounds ?citygmlentity .
-?osmlinkage a :Association_OSM_Class .
-?osmlinkage :hasosmid ?osmentity .
-?osmlinkage :hasosmclassid ?osmclassname .
-#NOTE: Residential categorization might need expansion
+?linkage a d2g2:Association_CityGML_OSM .
+?linkage d2g2:matchOSM ?osmentity .
+?linkage d2g2:matchCityGML/d2g2:mapSurface/bldg:bounds ?citygmlentity .
+?osmlinkage a d2g2:Association_OSM_Class .
+?osmlinkage d2g2:hasosmid ?osmentity .
+?osmlinkage d2g2:hasosmclassid ?osmclassname .
+#NOTE: Residential categorization used
 VALUES ?residentialclasses { lgdo:Residential lgdo:ResidentialHome lgdo:BuildingResidential lgdo:ApartmentBuilding lgdo:House } .
 ?osmclassname rdf:type ?residentialclasses .
 ?citygmlentity bldg:roofSurface/bldg:roofType ?roofType .
@@ -539,7 +239,7 @@ BIND("jet,0.8" AS ?citygmlGeomColor) # Red
 name="Q10: CityGML buildings affected by road expansion"
 query="""
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX : <https://github.com/yuzzfeng/D2G2/citygml#>
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
 PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
@@ -551,9 +251,9 @@ PREFIX uom: <http://www.opengis.net/def/uom/OGC/1.0/>
 SELECT ?citygmlGeom ?citygmlGeomAreaSqm
 {
 # Filter highways of interest
-?osmlinkage a :Association_OSM_Class .
-?osmlinkage :hasosmid ?osmentity .
-?osmlinkage :hasosmclassid ?osmclassname .
+?osmlinkage a d2g2:Association_OSM_Class .
+?osmlinkage d2g2:hasosmid ?osmentity .
+?osmlinkage d2g2:hasosmclassid ?osmclassname .
 VALUES ?highwayclasses { lgdo:SecondaryHighway lgdo:TertiaryHighway lgdo:HighwayService lgdo:UnclassifiedHighway } .
 ?osmclassname rdf:type ?highwayclasses .
 ?osmentity rdfs:label ?street_name .

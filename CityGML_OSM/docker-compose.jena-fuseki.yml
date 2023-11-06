@@ -1,40 +1,34 @@
 version: "3.8"
 
 services:
-  # Create 3DCityDB Schema
-  db-citydb:
-    image: 3dcitydb/3dcitydb-pg:15-3.3-4.4.0
+  # Create 3DCityDB schema
+  3dcitydb-db:
+    image: 3dcitydb/3dcitydb-pg:14-3.2-4.1.0
+    container_name: 3dcitydb-db
     command:
       - "-c"
       - "max_wal_size=4GB"
-    ports:
-      - "7778:5432"
     environment:
       - POSTGRES_DB=citydb
       - POSTGRES_USER=citydb
       - POSTGRES_PASSWORD=citydb
+      - PGUSER=citydb
       - PGDATA=postgres
       - SRID=25832
+    ports:
+      - "7778:5432"
     networks:
       - citydb-net
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -h 3dcitydb-db" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   # Load 3DCityDB data
-  impexp-citydb:
+  3dcitydb-impexp:
     image: 3dcitydb/impexp:5.3.0
-    volumes:
-      - ./citygml-data:/data
-      - ./wait-for-it:/opt/wait-for-it
-    ports:
-      - "7788:5432"
-    environment:
-      - CITYDB_TYPE=postgresql
-      - CITYDB_PORT=7778
-      - CITYDB_HOST=localhost
-      - CITYDB_NAME=citydb
-      - CITYDB_SCHEMA=citydb
-      - CITYDB_USERNAME=citydb
-      - CITYDB_PASSWORD=citydb
-      - SRID=25832
+    container_name: 3dcitydb-impexp
     command:
       - "import"
       - "-H"
@@ -46,15 +40,22 @@ services:
       - "-p"
       - "citydb"
       - "/data"
-    entrypoint:
-      [
-        "/opt/wait-for-it/wait-for-it.sh",
-        "db-citydb:5432",
-        "--timeout=0",
-        "--strict",
-        "--",
-        "impexp",
-      ]
+    environment:
+      - CITYDB_TYPE=postgresql
+      - CITYDB_PORT=7778
+      - CITYDB_HOST=localhost
+      - CITYDB_NAME=citydb
+      - CITYDB_SCHEMA=citydb
+      - CITYDB_USERNAME=citydb
+      - CITYDB_PASSWORD=citydb
+      - SRID=25832
+    ports:
+      - "7788:5432"
+    volumes:
+      - ./citygml-data:/data
+    depends_on:
+      3dcitydb-db:
+        condition: service_healthy
     networks:
       - citydb-net
     extra_hosts:
@@ -64,6 +65,7 @@ services:
   osm2pgsql:
     build:
       context: osm2pgsql/
+    container_name: osm2pgsql
     command: bash -c "sleep 5; /usr/local/bin/osm-importer.sh"
     environment:
       PG_PORT_5432_TCP_ADDR: host.docker.internal
@@ -73,17 +75,18 @@ services:
       PG_ENV_POSTGRES_PASSWORD: citydb
       REGION: europe/germany/bayern/oberbayern
     depends_on:
-      impexp-citydb:
+      3dcitydb-impexp:
         condition: service_completed_successfully
     networks:
       - citydb-net
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
-  # Add info on xAL addresses and citygml-osm matches table
-  db-edit:
+  # Add info on xAL addresses, indexes on GEOGRAPHY PostGIS datatype and citygml-osm matches table
+  3dcitydb-edit:
     build:
       context: db-edit/
+    container_name: 3dcitydb-edit
     depends_on:
       osm2pgsql:
         condition: service_completed_successfully
@@ -96,8 +99,9 @@ services:
   citygml2osmlinkage:
     build:
       context: linkage_citygml_osm/
+    container_name: citygml2osmlinkage
     depends_on:
-      db-edit:
+      3dcitydb-edit:
         condition: service_completed_successfully
     networks:
       - citydb-net
@@ -107,6 +111,7 @@ services:
   db-postprocess:
     build:
       context: post-processing/
+    container_name: db-postprocess
     depends_on:
       citygml2osmlinkage:
         condition: service_completed_successfully
@@ -117,16 +122,15 @@ services:
 
   # Use Ontop to materialize triples
   ontop:
-    #   image: ontop/ontop:5.0.2
     # Temporary image which resolves some issue caused by the combination of intersects and buffer in PostGIS
     image: albulenpano/d2g2-test:v1
+    container_name: ontop
     command: [ "ontop", "materialize", "-f", "turtle", "--output", "/opt/ontop/input/materialized-triples.ttl" ]
     environment:
       ONTOP_ONTOLOGY_FILE: /opt/ontop/input/citygml2.0.owl
       ONTOP_XML_CATALOG_FILE: /opt/ontop/input/catalog-v001.xml
       ONTOP_MAPPING_FILE: /opt/ontop/input/citygml2.0.obda
       ONTOP_PROPERTIES_FILE: /opt/ontop/input/citygml2.0.properties
-      #ONTOP_SPARQL_RULES_FILE: /opt/ontop/input/citygml2.0-rules.toml
       ONTOP_LOG_LEVEL: "true"
     volumes:
       - ./vkg:/opt/ontop/input

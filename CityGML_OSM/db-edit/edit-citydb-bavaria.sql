@@ -45,9 +45,6 @@ ALTER TABLE citydb.cityobject ADD CONSTRAINT unique_gmlid UNIQUE (gmlid);
 -- PostgreSQL requires "cityobject"."gmlid" to be declared as UNIQUE before adding foreign key.
 ALTER TABLE ONLY citydb."citygml_osm_association"
     ADD CONSTRAINT fk_association_gmlid FOREIGN KEY ("associated_citygmlid") REFERENCES citydb."cityobject" ("gmlid");
--- TODO: osm_id is NOT UNIQUE.
--- ALTER TABLE ONLY citydb."citygml_osm_association"
---     ADD CONSTRAINT fk_association_osmid FOREIGN KEY ("associated_osmid") REFERENCES public."classes" ("osm_id");
 
 -- Add roof types
 -- Based on https://www.citygmlwiki.org/images/f/fd/RoofTypeTypeAdV-trans.xml
@@ -78,13 +75,6 @@ INSERT INTO citydb.roof_codelist VALUES
 ALTER TABLE ONLY citydb.building
     ADD CONSTRAINT fk_roof_type FOREIGN KEY ("roof_type") REFERENCES citydb.roof_codelist ("name");
 
-
--- Add transformed geometry to WGS84 directly for surfaces in citydb table
--- ALTER TABLE citydb.surface_geometry
---     ADD COLUMN geometry_wgs84 GEOMETRY;
-
--- UPDATE citydb.surface_geometry
---     SET geometry_wgs84 = ST_TRANSFORM("geometry", 4326);
 
 -- Add more spatial indexes for GEOGRAPHY datatype
 CREATE INDEX surfacegeom_geog ON citydb.surface_geometry USING gist(CAST(ST_TRANSFORM("geometry",4326) AS GEOGRAPHY));
@@ -402,6 +392,8 @@ DROP TABLE citydb.planet_osm_nodes;
 DROP TABLE citydb.planet_osm_ways;
 DROP TABLE citydb.planet_osm_rels;
 
+
+-- TODO: Revise once newest version of SFCGAL is released
 -- Volumes can only be calculated on closed polyhedral surfaces with valid planar polygons
 -- Based on discussions:
 -- https://github.com/3dcitydb/importer-exporter/issues/193
