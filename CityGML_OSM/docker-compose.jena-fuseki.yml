@@ -127,7 +127,7 @@ services:
     container_name: ontop
     command: [ "ontop", "materialize", "-f", "turtle", "--output", "/opt/ontop/input/materialized-triples.ttl" ]
     environment:
-      ONTOP_ONTOLOGY_FILE: /opt/ontop/input/citygml2.0.owl
+      #ONTOP_ONTOLOGY_FILE: /opt/ontop/input/citygml2.0.owl
       ONTOP_XML_CATALOG_FILE: /opt/ontop/input/catalog-v001.xml
       ONTOP_MAPPING_FILE: /opt/ontop/input/citygml2.0.obda
       ONTOP_PROPERTIES_FILE: /opt/ontop/input/citygml2.0.properties
