@@ -122,8 +122,7 @@ services:
 
   # Use Ontop to materialize triples
   ontop:
-    # Temporary image which resolves some issue caused by the combination of intersects and buffer in PostGIS
-    image: albulenpano/d2g2-test:v1
+    image: ontop/ontop:5.2.0
     container_name: ontop
     command: [ "ontop", "materialize", "-f", "turtle", "--output", "/opt/ontop/input/materialized-triples.ttl" ]
     environment:

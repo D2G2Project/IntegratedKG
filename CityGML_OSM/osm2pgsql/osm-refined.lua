@@ -91,12 +91,16 @@ local orderedList = {
     "Bridge",
     "Brownfield",
     "Building",
+    "BuildingBarn",
+    "BuildingBunker",
+    "BuildingCabin",
     "BuildingChapel",
     "BuildingChurch",
     "BuildingCommercial",
     "BuildingDormitory",
     "BuildingGarage",
     "BuildingHospital",
+    "BuildingHut",
     "BuildingKiosk",
     "BuildingOffice",
     "BuildingResidential",
@@ -183,7 +187,10 @@ local orderedList = {
     "Hifi",
     "HighwayConstruction",
     "HighwayCrossing",
+    "HighwayPrimaryLink",
+    "HighwaySecondaryLink",
     "HighwayService",
+    "HighwayTertiaryLink",
     "HobbyShop",
     "HomeFurnishing",
     "Hospital",
@@ -210,6 +217,7 @@ local orderedList = {
     "Meadow",
     "MobilePhone",
     "Monastery",
+    "Motorway",
     "Motorcycle",
     "Museum",
     "Music",
@@ -239,6 +247,7 @@ local orderedList = {
     "PostBox",
     "PostOffice",
     "Pottery",
+    "PrimaryHighway",
     "Pub",
     "PublicBuilding",
     "RailwayLanduse",
@@ -247,6 +256,7 @@ local orderedList = {
     "Rent",
     "ResidentialHighway",
     "ResidentialLanduse",
+    "RestArea",
     "Restaurant",
     "RetailLanduse",
     "Ruins",
@@ -294,6 +304,7 @@ local orderedList = {
     "TravelAgency",
     "Tree",
     "TreeRow",
+    "Trunk",
     "TurningCircle",
     "University",
     "UnclassifiedHighway",
@@ -366,10 +377,9 @@ local buildingSubclassSuperclassList = { "public", "government"}
 local buildingSubclassList = { "hotel", "university", "house", "bridge", "elevator", "construction", "shed", "parking",
                                "service", "kindergarten", "terrace", "college", "ruins", "synagogue", "detached", "collapsed" }
 -- Highway
-local highwayUndescoreList = { "primary_link", "secondary_link", "tertiary_link", "turning_circle", "traffic_signals",
-                               "street_lamp", "speed_camera", "living_street", "bus_stop", "mini_roundabout", "rest_area", "service_station",
-                               "trunk_link"}
-local highwaySuperclassSubclassList = {"construction", "crossing", "ford", "service"}
+local highwayUndescoreList = { "turning_circle", "traffic_signals", "street_lamp", "speed_camera", "living_street",
+                               "bus_stop", "mini_roundabout", "rest_area", "service_station", "trunk_link"}
+local highwaySuperclassSubclassList = {"construction", "crossing", "ford", "service", "primary_link", "secondary_link", "tertiary_link"}
 local highwaySubclassSuperclassList = { "primary", "secondary", "tertiary", "unclassified", "residential", "proposed"}
 local highwaySubclassList = { "steps", "platform", "path", "footway", "elevator", "bridleway", "busguideway",
                               "byway", "cycleway", "emergencyaccesspoint", "motorway", "passingplance", "raceway",
@@ -452,7 +462,7 @@ local function refineclasses(list1, k ,v)
 
         -- Highway
     elseif starts_with(k, "highway") and contains(highwaySuperclassSubclassList, v)
-    then return k_upper .. v_upper
+    then return k_upper .. removeUnderscoreAndCapitalize(v)
     elseif starts_with(k, "highway") and contains(highwayUndescoreList, v)
     then return removeUnderscoreAndCapitalize(v)
     elseif starts_with(k, "highway") and contains(highwaySubclassSuperclassList, v)
