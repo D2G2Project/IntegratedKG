@@ -1,0 +1,46 @@
+title="IFC Sample Building QUeries"
+
+[defaultTab]
+query="""
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#>
+
+# Q1: Get total number of floors
+SELECT (COUNT(?s) AS ?totalFloors) {
+	?s a :IfcBuildingStorey .
+}
+"""
+
+[[tabGroups]]
+
+name="Examples"
+
+[[tabGroups.tabs]]
+
+name="Total floors"
+query="""
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#>
+
+# Q1: Get total number of floors
+SELECT (COUNT(?s) AS ?totalFloors) {
+	?s a :IfcBuildingStorey .
+}
+"""
+
+
+[[tabGroups.tabs]]
+
+name="Total walls"
+query="""
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#>
+
+# Q1: Get total number of walls
+SELECT (COUNT(?s) AS ?totalWalls) {
+	?s a :IfcWallStandardCase .
+}
+"""

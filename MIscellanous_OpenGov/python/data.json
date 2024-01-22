@@ -1,0 +1,5406 @@
+{
+  "offset": 0,
+  "data": [
+    {
+      "_timestamp": "2007-12-31 12:00:00.000+0000",
+      "tdescription": "Temperatura dell´aria",
+      "tmetadata": {},
+      "tname": "air-temperature",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:37:38.612+0000",
+      "mvalidtime": "2007-12-31 12:00:00.000+0000",
+      "mvalue": -0.4,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_211",
+      "scoordinate": {
+        "x": 11.3553,
+        "y": 47.2589,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 211,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            11.3553,
+            47.2589
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Innsbruck_Flughafen",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2007-12-31 12:00:00.000+0000",
+      "tdescription": "Maximum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-max",
+      "ttype": "max",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:37:54.913+0000",
+      "mvalidtime": "2007-12-31 12:00:00.000+0000",
+      "mvalue": 2,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_211",
+      "scoordinate": {
+        "x": 11.3553,
+        "y": 47.2589,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 211,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            11.3553,
+            47.2589
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Innsbruck_Flughafen",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2007-12-31 12:00:00.000+0000",
+      "tdescription": "Minimum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-min",
+      "ttype": "min",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:38:11.214+0000",
+      "mvalidtime": "2007-12-31 12:00:00.000+0000",
+      "mvalue": -2.8,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_211",
+      "scoordinate": {
+        "x": 11.3553,
+        "y": 47.2589,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 211,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            11.3553,
+            47.2589
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Innsbruck_Flughafen",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-07-31 12:00:00.000+0000",
+      "tdescription": "Maximum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-max",
+      "ttype": "max",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 14:48:32.973+0000",
+      "mvalidtime": "2009-07-31 12:00:00.000+0000",
+      "mvalue": 17.4,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0008",
+      "scoordinate": {
+        "x": 11.747509,
+        "y": 46.309517,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Paneveggio (campo neve)",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-07-31 12:00:00.000+0000",
+      "tdescription": "Temperatura dell´aria",
+      "tmetadata": {},
+      "tname": "air-temperature",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 14:48:29.542+0000",
+      "mvalidtime": "2009-07-31 12:00:00.000+0000",
+      "mvalue": 13,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0008",
+      "scoordinate": {
+        "x": 11.747509,
+        "y": 46.309517,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Paneveggio (campo neve)",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-07-31 12:00:00.000+0000",
+      "tdescription": "Minimum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-min",
+      "ttype": "min",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 14:48:36.516+0000",
+      "mvalidtime": "2009-07-31 12:00:00.000+0000",
+      "mvalue": 8.6,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0008",
+      "scoordinate": {
+        "x": 11.747509,
+        "y": 46.309517,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Paneveggio (campo neve)",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tmetadata": {},
+      "tname": "precipitation",
+      "tunit": "mm",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:43:12.384+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": 0,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_216",
+      "scoordinate": {
+        "x": 11.4617,
+        "y": 47.2097,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 216,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            11.4617,
+            47.2097
+          ]
+        },
+        "p_use": "1",
+        "t_use": "NA",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "NA",
+        "t_source": "NA",
+        "tmax_homo": "NA",
+        "tmin_homo": "NA"
+      },
+      "sname": "HISTALP_Patscherkofel",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tdescription": "Maximum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-max",
+      "ttype": "max",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:40:22.693+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": 4.4,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_213",
+      "scoordinate": {
+        "x": 10.564,
+        "y": 47.139,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 213,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            10.564,
+            47.139
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Landeck",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tmetadata": {},
+      "tname": "precipitation",
+      "tunit": "mm",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:39:37.587+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": 0,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_212",
+      "scoordinate": {
+        "x": 11.385,
+        "y": 47.261,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 212,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            11.385,
+            47.261
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Innsbruck_Universität",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tdescription": "Minimum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-min",
+      "ttype": "min",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:39:20.872+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": -0.8,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_212",
+      "scoordinate": {
+        "x": 11.385,
+        "y": 47.261,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 212,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            11.385,
+            47.261
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Innsbruck_Universität",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tdescription": "Temperatura dell´aria",
+      "tmetadata": {},
+      "tname": "air-temperature",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:38:46.306+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": 2.1,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_212",
+      "scoordinate": {
+        "x": 11.385,
+        "y": 47.261,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 212,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            11.385,
+            47.261
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Innsbruck_Universität",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tdescription": "Maximum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-max",
+      "ttype": "max",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:39:04.039+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": 4.9,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_212",
+      "scoordinate": {
+        "x": 11.385,
+        "y": 47.261,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 212,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            11.385,
+            47.261
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Innsbruck_Universität",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tmetadata": {},
+      "tname": "precipitation",
+      "tunit": "mm",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:38:28.077+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": 0,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_211",
+      "scoordinate": {
+        "x": 11.3553,
+        "y": 47.2589,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 211,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            11.3553,
+            47.2589
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Innsbruck_Flughafen",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tmetadata": {},
+      "tname": "precipitation",
+      "tunit": "mm",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:40:58.398+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": 2.7,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_213",
+      "scoordinate": {
+        "x": 10.564,
+        "y": 47.139,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 213,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            10.564,
+            47.139
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Landeck",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tdescription": "Minimum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-min",
+      "ttype": "min",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:40:40.942+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": -0.2,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_213",
+      "scoordinate": {
+        "x": 10.564,
+        "y": 47.139,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 213,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            10.564,
+            47.139
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Landeck",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2009-12-31 12:00:00.000+0000",
+      "tdescription": "Temperatura dell´aria",
+      "tmetadata": {},
+      "tname": "air-temperature",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 13:39:55.695+0000",
+      "mvalidtime": "2009-12-31 12:00:00.000+0000",
+      "mvalue": 2.1,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "EURAC_213",
+      "scoordinate": {
+        "x": 10.564,
+        "y": 47.139,
+        "srid": 4326
+      },
+      "smetadata": {
+        "id": 213,
+        "geom": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "Point",
+          "coordinates": [
+            10.564,
+            47.139
+          ]
+        },
+        "p_use": "1",
+        "t_use": "1",
+        "p_homo": "0",
+        "p_length": "2",
+        "p_source": "HISTALP",
+        "province": "AU",
+        "t_length": "2",
+        "t_source": "HISTALP",
+        "tmax_homo": "0",
+        "tmin_homo": "0"
+      },
+      "sname": "HISTALP_Landeck",
+      "sorigin": "EURAC",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2011-07-31 12:00:00.000+0000",
+      "tdescription": "Temperatura dell´aria",
+      "tmetadata": {},
+      "tname": "air-temperature",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 12:52:18.342+0000",
+      "mvalidtime": "2011-07-31 12:00:00.000+0000",
+      "mvalue": 3.8,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "894a43218e58b711e88b4c85c8163ab3d1ef4741",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0365",
+      "scoordinate": {
+        "x": 10.583453,
+        "y": 46.219964,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Cima Presena",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2011-07-31 12:00:00.000+0000",
+      "tdescription": "Maximum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-max",
+      "ttype": "max",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 14:28:23.428+0000",
+      "mvalidtime": "2011-07-31 12:00:00.000+0000",
+      "mvalue": 6.8,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0365",
+      "scoordinate": {
+        "x": 10.583453,
+        "y": 46.219964,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Cima Presena",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2011-07-31 12:00:00.000+0000",
+      "tdescription": "Minimum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-min",
+      "ttype": "min",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 14:28:28.969+0000",
+      "mvalidtime": "2011-07-31 12:00:00.000+0000",
+      "mvalue": 0.7,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0365",
+      "scoordinate": {
+        "x": 10.583453,
+        "y": 46.219964,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Cima Presena",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2013-12-14 21:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:41:00.000+0000",
+      "mvalidtime": "2013-12-14 21:00:00.000+0000",
+      "mvalue": 1049,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "galleria_virgolo",
+      "scoordinate": {
+        "x": 11.356604,
+        "y": 46.492471,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Uscita galleria virgolo",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2013-12-14 22:07:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:50.000+0000",
+      "mvalidtime": "2013-12-14 22:07:30.000+0000",
+      "mvalue": 3,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "galleria_virgolo",
+      "scoordinate": {
+        "x": 11.356604,
+        "y": 46.492471,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Uscita galleria virgolo",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2013-12-14 22:15:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:08.000+0000",
+      "mvalidtime": "2013-12-14 22:15:00.000+0000",
+      "mvalue": 3,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "galleria_virgolo",
+      "scoordinate": {
+        "x": 11.356604,
+        "y": 46.492471,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Uscita galleria virgolo",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-01-24 21:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:41:00.000+0000",
+      "mvalidtime": "2014-01-24 21:00:00.000+0000",
+      "mvalue": 444,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "laives_north",
+      "scoordinate": {
+        "x": 11.345444,
+        "y": 46.430677,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Laives - Leifers"
+      },
+      "sname": "Laives North",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-01-24 21:15:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:07.000+0000",
+      "mvalidtime": "2014-01-24 21:15:00.000+0000",
+      "mvalue": 27,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "laives_north",
+      "scoordinate": {
+        "x": 11.345444,
+        "y": 46.430677,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Laives - Leifers"
+      },
+      "sname": "Laives North",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-01-24 21:22:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:49.000+0000",
+      "mvalidtime": "2014-01-24 21:22:30.000+0000",
+      "mvalue": 12,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "laives_north",
+      "scoordinate": {
+        "x": 11.345444,
+        "y": 46.430677,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Laives - Leifers"
+      },
+      "sname": "Laives North",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-01-30 12:00:00.000+0000",
+      "tdescription": "Maximum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-max",
+      "ttype": "max",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 14:33:08.110+0000",
+      "mvalidtime": "2014-01-30 12:00:00.000+0000",
+      "mvalue": -9,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0444",
+      "scoordinate": {
+        "x": 11.871709,
+        "y": 46.255107,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Ghiacciaio di Fradusta",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2014-01-30 12:00:00.000+0000",
+      "tdescription": "Minimum temperature",
+      "tmetadata": {},
+      "tname": "air-temperature-min",
+      "ttype": "min",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 14:33:08.427+0000",
+      "mvalidtime": "2014-01-30 12:00:00.000+0000",
+      "mvalue": -12.2,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0444",
+      "scoordinate": {
+        "x": 11.871709,
+        "y": 46.255107,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Ghiacciaio di Fradusta",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2014-01-30 12:00:00.000+0000",
+      "tdescription": "Temperatura dell´aria",
+      "tmetadata": {},
+      "tname": "air-temperature",
+      "tunit": "°C",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 14:33:07.781+0000",
+      "mvalidtime": "2014-01-30 12:00:00.000+0000",
+      "mvalue": -10.6,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0444",
+      "scoordinate": {
+        "x": 11.871709,
+        "y": 46.255107,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Ghiacciaio di Fradusta",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2014-02-10 08:37:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:50.000+0000",
+      "mvalidtime": "2014-02-10 08:37:30.000+0000",
+      "mvalue": 7,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "druso_mobile",
+      "scoordinate": {
+        "x": 11.338878,
+        "y": 46.495072,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Druso mobile",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-02-10 08:45:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:08.000+0000",
+      "mvalidtime": "2014-02-10 08:45:00.000+0000",
+      "mvalue": 7,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "druso_mobile",
+      "scoordinate": {
+        "x": 11.338878,
+        "y": 46.495072,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Druso mobile",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-02-10 09:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:41:00.000+0000",
+      "mvalidtime": "2014-02-10 09:00:00.000+0000",
+      "mvalue": 46,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "druso_mobile",
+      "scoordinate": {
+        "x": 11.338878,
+        "y": 46.495072,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Druso mobile",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-02-24 12:45:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:06.000+0000",
+      "mvalidtime": "2014-02-24 12:45:00.000+0000",
+      "mvalue": 2,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "laives_south",
+      "scoordinate": {
+        "x": 11.329876,
+        "y": 46.412398,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Laives - Leifers"
+      },
+      "sname": "Laives South",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-02-24 12:52:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:48.000+0000",
+      "mvalidtime": "2014-02-24 12:52:30.000+0000",
+      "mvalue": 2,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "laives_south",
+      "scoordinate": {
+        "x": 11.329876,
+        "y": 46.412398,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Laives - Leifers"
+      },
+      "sname": "Laives South",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-02-24 15:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:40:59.000+0000",
+      "mvalidtime": "2014-02-24 15:00:00.000+0000",
+      "mvalue": 2,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "laives_south",
+      "scoordinate": {
+        "x": 11.329876,
+        "y": 46.412398,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Laives - Leifers"
+      },
+      "sname": "Laives South",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-07-03 18:15:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:08.000+0000",
+      "mvalidtime": "2014-07-03 18:15:00.000+0000",
+      "mvalue": 64,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "druso",
+      "scoordinate": {
+        "x": 11.338878,
+        "y": 46.495072,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Viale Druso",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-07-03 18:22:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:50.000+0000",
+      "mvalidtime": "2014-07-03 18:22:30.000+0000",
+      "mvalue": 20,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "druso",
+      "scoordinate": {
+        "x": 11.338878,
+        "y": 46.495072,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Viale Druso",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-07-03 21:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:41:00.000+0000",
+      "mvalidtime": "2014-07-03 21:00:00.000+0000",
+      "mvalue": 64,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "druso",
+      "scoordinate": {
+        "x": 11.338878,
+        "y": 46.495072,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Viale Druso",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-07-16 09:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:38:42.000+0000",
+      "mvalidtime": "2014-07-16 09:00:00.000+0000",
+      "mvalue": 32,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "test",
+      "sname": "test @tis",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-07-16 10:45:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:43:57.000+0000",
+      "mvalidtime": "2014-07-16 10:45:00.000+0000",
+      "mvalue": 19,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "test",
+      "sname": "test @tis",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-07-16 10:52:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:44.000+0000",
+      "mvalidtime": "2014-07-16 10:52:30.000+0000",
+      "mvalue": 12,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "test",
+      "sname": "test @tis",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-08-04 21:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:41:00.000+0000",
+      "mvalidtime": "2014-08-04 21:00:00.000+0000",
+      "mvalue": 16,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "vienna",
+      "sname": "Vienna",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-08-04 22:07:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:49.000+0000",
+      "mvalidtime": "2014-08-04 22:07:30.000+0000",
+      "mvalue": 1,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "vienna",
+      "sname": "Vienna",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2014-08-04 22:15:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:07.000+0000",
+      "mvalidtime": "2014-08-04 22:15:00.000+0000",
+      "mvalue": 1,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "vienna",
+      "sname": "Vienna",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-02-26 18:04:58.000+0000",
+      "tmetadata": {},
+      "tname": "vehicle detection",
+      "mperiod": 1,
+      "mtransactiontime": "2015-02-26 18:05:04.870+0000",
+      "mvalidtime": "2015-02-26 18:04:58.000+0000",
+      "mvalue": "6a6cdf40d5689dd9d6b2ae3009b6bd32f8c47ac39030fae541eaee5e870c1985",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rosmini",
+      "scoordinate": {
+        "x": 11.347846,
+        "y": 46.499077,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Via Rosmini",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-02-26 18:07:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:49.000+0000",
+      "mvalidtime": "2015-02-26 18:07:30.000+0000",
+      "mvalue": 21,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rosmini",
+      "scoordinate": {
+        "x": 11.347846,
+        "y": 46.499077,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Via Rosmini",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-02-26 18:15:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:07.000+0000",
+      "mvalidtime": "2015-02-26 18:15:00.000+0000",
+      "mvalue": 21,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rosmini",
+      "scoordinate": {
+        "x": 11.347846,
+        "y": 46.499077,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Via Rosmini",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-02-26 21:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:41:00.000+0000",
+      "mvalidtime": "2015-02-26 21:00:00.000+0000",
+      "mvalue": 21,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rosmini",
+      "scoordinate": {
+        "x": 11.347846,
+        "y": 46.499077,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Via Rosmini",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-06-12 18:45:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:05.000+0000",
+      "mvalidtime": "2015-06-12 18:45:00.000+0000",
+      "mvalue": 60,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "presia",
+      "scoordinate": {
+        "x": 11.323833,
+        "y": 46.481331,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "ponte resia",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-06-12 18:52:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:47.000+0000",
+      "mvalidtime": "2015-06-12 18:52:30.000+0000",
+      "mvalue": 60,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "presia",
+      "scoordinate": {
+        "x": 11.323833,
+        "y": 46.481331,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "ponte resia",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-06-12 18:59:53.000+0000",
+      "tmetadata": {},
+      "tname": "vehicle detection",
+      "mperiod": 1,
+      "mtransactiontime": "2015-06-12 19:00:07.822+0000",
+      "mvalidtime": "2015-06-12 18:59:53.000+0000",
+      "mvalue": "f9de35e39b7e9991ac546802c44d73fca20d4ce7d2dcf89cf14e8a1879bf8594",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "presia",
+      "scoordinate": {
+        "x": 11.323833,
+        "y": 46.481331,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "ponte resia",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-06-12 21:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:40:58.000+0000",
+      "mvalidtime": "2015-06-12 21:00:00.000+0000",
+      "mvalue": 61,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "presia",
+      "scoordinate": {
+        "x": 11.323833,
+        "y": 46.481331,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "ponte resia",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-08-28 14:45:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:08.000+0000",
+      "mvalidtime": "2015-08-28 14:45:00.000+0000",
+      "mvalue": 5,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "thales",
+      "sname": "thales",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-08-28 14:52:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:50.000+0000",
+      "mvalidtime": "2015-08-28 14:52:30.000+0000",
+      "mvalue": 2,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "thales",
+      "sname": "thales",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-08-28 14:57:06.000+0000",
+      "tmetadata": {},
+      "tname": "vehicle detection",
+      "mperiod": 1,
+      "mtransactiontime": "2015-08-28 15:00:19.023+0000",
+      "mvalidtime": "2015-08-28 14:57:06.000+0000",
+      "mvalue": "ecc85160cceedc183d466634f7b4d59c77910b403750539ba6e6d3e103a71dd3",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "thales",
+      "sname": "thales",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-08-28 15:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:41:01.000+0000",
+      "mvalidtime": "2015-08-28 15:00:00.000+0000",
+      "mvalue": 15,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "thales",
+      "sname": "thales",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-09-05 12:00:00.000+0000",
+      "tmetadata": {},
+      "tname": "precipitation",
+      "tunit": "mm",
+      "mperiod": 86400,
+      "mtransactiontime": "2022-08-03 14:48:40.192+0000",
+      "mvalidtime": "2015-09-05 12:00:00.000+0000",
+      "mvalue": 6,
+      "prlineage": "EURAC",
+      "prname": "odh-mobility-dc-meteorology-eurac",
+      "prversion": "e86009258c06a5e58c1ad723f6a14f1229ffb615",
+      "sactive": true,
+      "savailable": true,
+      "scode": "T0008",
+      "scoordinate": {
+        "x": 11.747509,
+        "y": 46.309517,
+        "srid": 4326
+      },
+      "smetadata": {},
+      "sname": "Paneveggio (campo neve)",
+      "sorigin": "meteotrentino",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2015-09-07 09:00:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 21600,
+      "mtransactiontime": "2017-08-09 09:41:00.000+0000",
+      "mvalidtime": "2015-09-07 09:00:00.000+0000",
+      "mvalue": 192,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "vveneto",
+      "scoordinate": {
+        "x": 11.330587,
+        "y": 46.502537,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Vittorio veneto",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-09-07 09:45:00.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 1800,
+      "mtransactiontime": "2017-08-09 09:44:07.000+0000",
+      "mvalidtime": "2015-09-07 09:45:00.000+0000",
+      "mvalue": 59,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "vveneto",
+      "scoordinate": {
+        "x": 11.330587,
+        "y": 46.502537,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Vittorio veneto",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-09-07 09:52:30.000+0000",
+      "tdescription": "Count record ",
+      "tname": "Bluetooth Count record",
+      "ttype": "Count",
+      "mperiod": 900,
+      "mtransactiontime": "2017-08-09 09:41:49.000+0000",
+      "mvalidtime": "2015-09-07 09:52:30.000+0000",
+      "mvalue": 59,
+      "prlineage": "NOI",
+      "prname": "Migration from V1: Elaborations",
+      "sactive": false,
+      "savailable": true,
+      "scode": "vveneto",
+      "scoordinate": {
+        "x": 11.330587,
+        "y": 46.502537,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Vittorio veneto",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-09-07 09:59:52.000+0000",
+      "tmetadata": {},
+      "tname": "vehicle detection",
+      "mperiod": 1,
+      "mtransactiontime": "2015-09-07 10:00:08.661+0000",
+      "mvalidtime": "2015-09-07 09:59:52.000+0000",
+      "mvalue": "a58f85ab5d0881c1b4734a570c0786c3d0a0c0d317c19857b545aba25e4a1034",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "vveneto",
+      "scoordinate": {
+        "x": 11.330587,
+        "y": 46.502537,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "Vittorio veneto",
+      "stype": "BluetoothStation"
+    },
+    {
+      "_timestamp": "2015-11-30 11:00:00.000+0000",
+      "tdescription": "acquisition interval = 10",
+      "tname": "type-of-precipitation",
+      "mperiod": 600,
+      "mtransactiontime": "2015-02-16 17:51:08.252+0000",
+      "mvalidtime": "2015-11-30 11:00:00.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rwis2",
+      "scoordinate": {
+        "x": 11.134472,
+        "y": 46.197769,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "San Michele all'Adige"
+      },
+      "sname": "S.Michele",
+      "sorigin": "InfoMobility",
+      "stype": "RWISstation"
+    },
+    {
+      "_timestamp": "2015-11-30 11:00:00.000+0000",
+      "tdescription": "acquisition interval = 10",
+      "tname": "ground-surface-temperature",
+      "tunit": "°C",
+      "mperiod": 600,
+      "mtransactiontime": "2015-02-16 17:51:08.261+0000",
+      "mvalidtime": "2015-11-30 11:00:00.000+0000",
+      "mvalue": 2.92,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rwis2",
+      "scoordinate": {
+        "x": 11.134472,
+        "y": 46.197769,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "San Michele all'Adige"
+      },
+      "sname": "S.Michele",
+      "sorigin": "InfoMobility",
+      "stype": "RWISstation"
+    },
+    {
+      "_timestamp": "2015-11-30 11:00:00.000+0000",
+      "tdescription": "Temperatura dell´aria",
+      "tmetadata": {},
+      "tname": "air-temperature",
+      "tunit": "°C",
+      "mperiod": 600,
+      "mtransactiontime": "2015-02-16 17:51:08.223+0000",
+      "mvalidtime": "2015-11-30 11:00:00.000+0000",
+      "mvalue": 2.96,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rwis2",
+      "scoordinate": {
+        "x": 11.134472,
+        "y": 46.197769,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "San Michele all'Adige"
+      },
+      "sname": "S.Michele",
+      "sorigin": "InfoMobility",
+      "stype": "RWISstation"
+    },
+    {
+      "_timestamp": "2015-11-30 11:00:00.000+0000",
+      "tdescription": "Umidità relativa",
+      "tmetadata": {},
+      "tname": "air-humidity",
+      "tunit": "%",
+      "mperiod": 600,
+      "mtransactiontime": "2015-02-16 17:51:08.239+0000",
+      "mvalidtime": "2015-11-30 11:00:00.000+0000",
+      "mvalue": 54,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rwis2",
+      "scoordinate": {
+        "x": 11.134472,
+        "y": 46.197769,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "San Michele all'Adige"
+      },
+      "sname": "S.Michele",
+      "sorigin": "InfoMobility",
+      "stype": "RWISstation"
+    },
+    {
+      "_timestamp": "2015-11-30 11:00:00.000+0000",
+      "tdescription": "Velocità del vento",
+      "tmetadata": {},
+      "tname": "wind-speed",
+      "tunit": "m/s",
+      "mperiod": 600,
+      "mtransactiontime": "2015-02-16 17:51:08.243+0000",
+      "mvalidtime": "2015-11-30 11:00:00.000+0000",
+      "mvalue": 5.7,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rwis2",
+      "scoordinate": {
+        "x": 11.134472,
+        "y": 46.197769,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "San Michele all'Adige"
+      },
+      "sname": "S.Michele",
+      "sorigin": "InfoMobility",
+      "stype": "RWISstation"
+    },
+    {
+      "_timestamp": "2015-11-30 11:00:00.000+0000",
+      "tdescription": "acquisition interval = 10",
+      "tname": "atmospheric-pressure",
+      "ttype": "Mittelwerte",
+      "tunit": "hPa",
+      "mperiod": 600,
+      "mtransactiontime": "2015-02-16 17:51:08.247+0000",
+      "mvalidtime": "2015-11-30 11:00:00.000+0000",
+      "mvalue": 998,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "rwis2",
+      "scoordinate": {
+        "x": 11.134472,
+        "y": 46.197769,
+        "srid": 4326
+      },
+      "smetadata": {
+        "municipality": "San Michele all'Adige"
+      },
+      "sname": "S.Michele",
+      "sorigin": "InfoMobility",
+      "stype": "RWISstation"
+    },
+    {
+      "_timestamp": "2015-12-22 07:50:15.306+0000",
+      "tdescription": "number of available vehicles / charging points",
+      "tmetadata": {},
+      "tname": "number-available",
+      "ttype": "Instantaneous",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2015-09-14 17:33:01.737+0000",
+      "mvalidtime": "2015-12-22 07:50:15.306+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000004",
+      "scoordinate": {
+        "x": 11.358552,
+        "y": 46.499783,
+        "srid": 4326
+      },
+      "smetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "MAINTENANCE",
+        "capacity": 2,
+        "provider": "AER",
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "CU_GUASTA_002",
+      "stype": "EChargingStation"
+    },
+    {
+      "_timestamp": "2015-12-22 07:50:15.306+0000",
+      "tdescription": "the state can either be 0, which means that the plug is currently not available, or it can be 1 which means it is",
+      "tmetadata": {},
+      "tname": "echarging-plug-status",
+      "ttype": "",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2015-09-15 10:27:09.739+0000",
+      "mvalidtime": "2015-12-22 07:50:15.306+0000",
+      "mvalue": 4,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "AER_00000004",
+      "pcoordinate": {
+        "x": 11.358552,
+        "y": 46.499783,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "MAINTENANCE",
+        "capacity": 2,
+        "provider": "AER",
+        "municipality": "Bolzano - Bozen"
+      },
+      "pname": "CU_GUASTA_002",
+      "ptype": "EChargingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000004-1",
+      "scoordinate": {
+        "x": 11.322065,
+        "y": 46.478943,
+        "srid": 4326
+      },
+      "smetadata": {
+        "maxPower": 7015,
+        "maxCurrent": 31,
+        "minCurrent": 6,
+        "municipality": "Bolzano - Bozen",
+        "outletTypeCode": "IEC 62196-2 type 2 outlets (all amperage and phase)"
+      },
+      "sname": "CU_GUASTA_002-1",
+      "stype": "EChargingPlug"
+    },
+    {
+      "_timestamp": "2015-12-22 07:50:15.306+0000",
+      "tdescription": "the state can either be 0, which means that the plug is currently not available, or it can be 1 which means it is",
+      "tmetadata": {},
+      "tname": "echarging-plug-status",
+      "ttype": "",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2015-09-15 10:27:09.827+0000",
+      "mvalidtime": "2015-12-22 07:50:15.306+0000",
+      "mvalue": 4,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "AER_00000004",
+      "pcoordinate": {
+        "x": 11.358552,
+        "y": 46.499783,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "MAINTENANCE",
+        "capacity": 2,
+        "provider": "AER",
+        "municipality": "Bolzano - Bozen"
+      },
+      "pname": "CU_GUASTA_002",
+      "ptype": "EChargingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000004-2",
+      "scoordinate": {
+        "x": 11.322065,
+        "y": 46.478943,
+        "srid": 4326
+      },
+      "smetadata": {
+        "maxPower": 7015,
+        "maxCurrent": 31,
+        "minCurrent": 6,
+        "municipality": "Bolzano - Bozen",
+        "outletTypeCode": "IEC 62196-2 type 2 outlets (all amperage and phase)"
+      },
+      "sname": "CU_GUASTA_002-2",
+      "stype": "EChargingPlug"
+    },
+    {
+      "_timestamp": "2015-12-23 11:30:15.369+0000",
+      "tdescription": "the state can either be 0, which means that the plug is currently not available, or it can be 1 which means it is",
+      "tmetadata": {},
+      "tname": "echarging-plug-status",
+      "ttype": "",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2015-09-15 10:27:13.269+0000",
+      "mvalidtime": "2015-12-23 11:30:15.369+0000",
+      "mvalue": 4,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "AER_00000038",
+      "pcoordinate": {
+        "x": 11.76566,
+        "y": 46.54959,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "MAINTENANCE",
+        "capacity": 2,
+        "provider": "AER",
+        "municipality": "Sëlva - Wolkenstein - Selva di Val Gardena"
+      },
+      "pname": "CU_GALVANI_01",
+      "ptype": "EChargingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000038-2",
+      "scoordinate": {
+        "x": 11.329611,
+        "y": 46.468864,
+        "srid": 4326
+      },
+      "smetadata": {
+        "maxPower": 7015,
+        "maxCurrent": 31,
+        "minCurrent": 6,
+        "municipality": "Bolzano - Bozen",
+        "outletTypeCode": "IEC 62196-2 type 2 outlets (all amperage and phase)"
+      },
+      "sname": "CU_GALVANI_01-2",
+      "stype": "EChargingPlug"
+    },
+    {
+      "_timestamp": "2015-12-23 11:30:15.369+0000",
+      "tdescription": "the state can either be 0, which means that the plug is currently not available, or it can be 1 which means it is",
+      "tmetadata": {},
+      "tname": "echarging-plug-status",
+      "ttype": "",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2015-09-15 10:27:13.180+0000",
+      "mvalidtime": "2015-12-23 11:30:15.369+0000",
+      "mvalue": 4,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "AER_00000038",
+      "pcoordinate": {
+        "x": 11.76566,
+        "y": 46.54959,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "MAINTENANCE",
+        "capacity": 2,
+        "provider": "AER",
+        "municipality": "Sëlva - Wolkenstein - Selva di Val Gardena"
+      },
+      "pname": "CU_GALVANI_01",
+      "ptype": "EChargingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000038-1",
+      "scoordinate": {
+        "x": 11.329611,
+        "y": 46.468864,
+        "srid": 4326
+      },
+      "smetadata": {
+        "maxPower": 7015,
+        "maxCurrent": 31,
+        "minCurrent": 6,
+        "municipality": "Bolzano - Bozen",
+        "outletTypeCode": "IEC 62196-2 type 2 outlets (all amperage and phase)"
+      },
+      "sname": "CU_GALVANI_01-1",
+      "stype": "EChargingPlug"
+    },
+    {
+      "_timestamp": "2015-12-23 11:30:15.369+0000",
+      "tdescription": "number of available vehicles / charging points",
+      "tmetadata": {},
+      "tname": "number-available",
+      "ttype": "Instantaneous",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2015-09-14 17:33:03.600+0000",
+      "mvalidtime": "2015-12-23 11:30:15.369+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000038",
+      "scoordinate": {
+        "x": 11.76566,
+        "y": 46.54959,
+        "srid": 4326
+      },
+      "smetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "MAINTENANCE",
+        "capacity": 2,
+        "provider": "AER",
+        "municipality": "Sëlva - Wolkenstein - Selva di Val Gardena"
+      },
+      "sname": "CU_GALVANI_01",
+      "stype": "EChargingStation"
+    },
+    {
+      "_timestamp": "2016-01-26 16:00:00.000+0000",
+      "tname": "rainfall-duration",
+      "ttype": "Sum",
+      "tunit": "s",
+      "mperiod": 300,
+      "mtransactiontime": "2014-09-19 15:00:36.053+0000",
+      "mvalidtime": "2016-01-26 16:00:00.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": true,
+      "savailable": true,
+      "scode": "83200MS",
+      "scoordinate": {
+        "x": 11.3128,
+        "y": 46.4977,
+        "srid": 4326
+      },
+      "smetadata": {
+        "name_de": "Bozen",
+        "name_en": "Bolzano",
+        "name_it": "Bolzano"
+      },
+      "sname": "Bolzano",
+      "sorigin": "SIAG",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2016-01-26 16:00:00.000+0000",
+      "tdescription": "acquisition interval = 10",
+      "tname": "atmospheric-pressure",
+      "ttype": "Mittelwerte",
+      "tunit": "hPa",
+      "mperiod": 600,
+      "mtransactiontime": "2014-03-19 15:10:00.692+0000",
+      "mvalidtime": "2016-01-26 16:00:00.000+0000",
+      "mvalue": 998.8,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": true,
+      "savailable": true,
+      "scode": "83200MS",
+      "scoordinate": {
+        "x": 11.3128,
+        "y": 46.4977,
+        "srid": 4326
+      },
+      "smetadata": {
+        "name_de": "Bozen",
+        "name_en": "Bolzano",
+        "name_it": "Bolzano"
+      },
+      "sname": "Bolzano",
+      "sorigin": "SIAG",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2016-02-03 12:50:00.000+0000",
+      "tmetadata": {},
+      "tname": "precipitation",
+      "tunit": "mm",
+      "mperiod": 600,
+      "mtransactiontime": "2016-01-25 16:07:57.471+0000",
+      "mvalidtime": "2016-02-03 12:50:00.000+0000",
+      "mvalue": 0.3,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "102343",
+      "scoordinate": {
+        "x": 5208992,
+        "y": 690567,
+        "srid": 4326
+      },
+      "smetadata": {
+        "area": "---"
+      },
+      "sname": "Brenner",
+      "sorigin": "SIAG",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2016-02-03 13:00:00.000+0000",
+      "tdescription": "Pressione atmosferica",
+      "tmetadata": {},
+      "tname": "atmospheric-pressure-reduced",
+      "tunit": "hPa",
+      "mperiod": 600,
+      "mtransactiontime": "2016-01-25 16:08:26.526+0000",
+      "mvalidtime": "2016-02-03 13:00:00.000+0000",
+      "mvalue": 1017.6451,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "102343",
+      "scoordinate": {
+        "x": 5208992,
+        "y": 690567,
+        "srid": 4326
+      },
+      "smetadata": {
+        "area": "---"
+      },
+      "sname": "Brenner",
+      "sorigin": "SIAG",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2016-02-03 13:00:00.000+0000",
+      "tdescription": "Temperatura dell´aria",
+      "tmetadata": {},
+      "tname": "air-temperature",
+      "tunit": "°C",
+      "mperiod": 600,
+      "mtransactiontime": "2016-01-25 16:37:28.007+0000",
+      "mvalidtime": "2016-02-03 13:00:00.000+0000",
+      "mvalue": -0.5,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "102343",
+      "scoordinate": {
+        "x": 5208992,
+        "y": 690567,
+        "srid": 4326
+      },
+      "smetadata": {
+        "area": "---"
+      },
+      "sname": "Brenner",
+      "sorigin": "SIAG",
+      "stype": "MeteoStation"
+    },
+    {
+      "_timestamp": "2016-07-14 10:35:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.561+0000",
+      "mvalidtime": "2016-07-14 10:35:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike140",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(140)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:35:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.405+0000",
+      "mvalidtime": "2016-07-14 10:35:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike131",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(131)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:35:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.503+0000",
+      "mvalidtime": "2016-07-14 10:35:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike141",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(141)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:20:44.039+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike142",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(142)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.691+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation2",
+      "pcoordinate": {
+        "x": 11.150187,
+        "y": 46.672476,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 28,
+          "mountain-bike-adult": 4,
+          "mountain-bike-child": 8,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 9,
+          "city-bike-adult-without-gears": 5
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Stazione treni",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike152",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(152)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.254+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike100",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(100)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "mountain-bike-teenager",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.348+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike56",
+      "smetadata": {
+        "type": "mountain-bike-teenager"
+      },
+      "sname": "mountain-bike-teenager(56)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.274+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike132",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(132)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.154+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike134",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(134)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.096+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike133",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(133)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.795+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike137",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(137)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.861+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike138",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(138)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.343+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike146",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(146)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.898+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike129",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(129)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.100+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike144",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(144)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.710+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike37",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(37)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.464+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike130",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(130)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.220+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike145",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(145)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.737+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation2",
+      "pcoordinate": {
+        "x": 11.150187,
+        "y": 46.672476,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 28,
+          "mountain-bike-adult": 4,
+          "mountain-bike-child": 8,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 9,
+          "city-bike-adult-without-gears": 5
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Stazione treni",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike139",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(139)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.620+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike143",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(143)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.028+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike136",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(136)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.929+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike135",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(135)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.853+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike128",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(128)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.706+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike127",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(127)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:45:16.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.444+0000",
+      "mvalidtime": "2016-07-14 10:45:16.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike147",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(147)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.753+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike11",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(11)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.695+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike109",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(109)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.444+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike15",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(15)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.875+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike86",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(86)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.431+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike87",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(87)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.156+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike97",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(97)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.572+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike58",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(58)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.395+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike74",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(74)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.925+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike148",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(148)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.633+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike36",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(36)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.630+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike126",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(126)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.556+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike125",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(125)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.414+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike124",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(124)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.838+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike29",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(29)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.713+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike25",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(25)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.098+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike96",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(96)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.653+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike16",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(16)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.578+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike17",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(17)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.519+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike14",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(14)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.100+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike76",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(76)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.227+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike155",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(155)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.168+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike156",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(156)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.033+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike77",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(77)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.803+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike108",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(108)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.983+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike82",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(82)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.816+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation2",
+      "pcoordinate": {
+        "x": 11.150187,
+        "y": 46.672476,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 28,
+          "mountain-bike-adult": 4,
+          "mountain-bike-child": 8,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 9,
+          "city-bike-adult-without-gears": 5
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Stazione treni",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike154",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(154)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.732+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike153",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(153)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.934+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike81",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(81)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-adult",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.984+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike149",
+      "smetadata": {
+        "type": "mountain-bike-adult"
+      },
+      "sname": "mountain-bike-adult(149)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-teenager",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.381+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike88",
+      "smetadata": {
+        "type": "mountain-bike-teenager"
+      },
+      "sname": "mountain-bike-teenager(88)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.870+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike105",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(105)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-teenager",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.588+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike7",
+      "smetadata": {
+        "type": "mountain-bike-teenager"
+      },
+      "sname": "mountain-bike-teenager(7)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-teenager",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.519+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike89",
+      "smetadata": {
+        "type": "mountain-bike-teenager"
+      },
+      "sname": "mountain-bike-teenager(89)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-with-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.641+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation2",
+      "pcoordinate": {
+        "x": 11.150187,
+        "y": 46.672476,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 28,
+          "mountain-bike-adult": 4,
+          "mountain-bike-child": 8,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 9,
+          "city-bike-adult-without-gears": 5
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Stazione treni",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike151",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(151)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-teenager",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.215+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike90",
+      "smetadata": {
+        "type": "mountain-bike-teenager"
+      },
+      "sname": "mountain-bike-teenager(90)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:20:42.836+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike116",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(116)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.592+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike119",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(119)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.491+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike118",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(118)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.241+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike117",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(117)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.132+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike114",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(114)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.948+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike121",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(121)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.255+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike123",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(123)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.205+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike122",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(122)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.573+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike150",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(150)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.048+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike95",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(95)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:27.994+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike94",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(94)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-adult",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.314+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation2",
+      "pcoordinate": {
+        "x": 11.150187,
+        "y": 46.672476,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 28,
+          "mountain-bike-adult": 4,
+          "mountain-bike-child": 8,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 9,
+          "city-bike-adult-without-gears": 5
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Stazione treni",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike53",
+      "smetadata": {
+        "type": "mountain-bike-adult"
+      },
+      "sname": "mountain-bike-adult(53)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-adult",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.147+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike51",
+      "smetadata": {
+        "type": "mountain-bike-adult"
+      },
+      "sname": "mountain-bike-adult(51)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-adult",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.530+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike1",
+      "smetadata": {
+        "type": "mountain-bike-adult"
+      },
+      "sname": "mountain-bike-adult(1)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-adult",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.454+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike4",
+      "smetadata": {
+        "type": "mountain-bike-adult"
+      },
+      "sname": "mountain-bike-adult(4)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-adult",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.362+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike3",
+      "smetadata": {
+        "type": "mountain-bike-adult"
+      },
+      "sname": "mountain-bike-adult(3)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-adult",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.377+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation2",
+      "pcoordinate": {
+        "x": 11.150187,
+        "y": 46.672476,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 28,
+          "mountain-bike-adult": 4,
+          "mountain-bike-child": 8,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 9,
+          "city-bike-adult-without-gears": 5
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Stazione treni",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike157",
+      "smetadata": {
+        "type": "mountain-bike-adult"
+      },
+      "sname": "mountain-bike-adult(157)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-adult",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.287+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation2",
+      "pcoordinate": {
+        "x": 11.150187,
+        "y": 46.672476,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 28,
+          "mountain-bike-adult": 4,
+          "mountain-bike-child": 8,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 9,
+          "city-bike-adult-without-gears": 5
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Stazione treni",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike158",
+      "smetadata": {
+        "type": "mountain-bike-adult"
+      },
+      "sname": "mountain-bike-adult(158)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:20:41.079+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike20",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(20)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:20:39.932+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike83",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(83)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-adult",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.489+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike52",
+      "smetadata": {
+        "type": "mountain-bike-adult"
+      },
+      "sname": "mountain-bike-adult(52)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.522+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike55",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(55)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:34.221+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike61",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(61)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.694+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike60",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(60)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.276+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike75",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(75)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.159+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike72",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(72)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:33.050+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike73",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(73)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.875+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike33",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(33)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.015+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike120",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(120)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.825+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike35",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(35)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.766+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike110",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(110)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.182+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike112",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(112)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-child",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.541+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike115",
+      "smetadata": {
+        "type": "mountain-bike-child"
+      },
+      "sname": "mountain-bike-child(115)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:32.074+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike113",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(113)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.088+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike30",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(30)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:31.013+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike98",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(98)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-teenager",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.257+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike91",
+      "smetadata": {
+        "type": "mountain-bike-teenager"
+      },
+      "sname": "mountain-bike-teenager(91)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.955+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike99",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(99)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.780+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike21",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(21)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.655+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike27",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(27)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.304+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike18",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(18)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.187+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike19",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(19)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.128+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike106",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(106)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:30.079+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike107",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(107)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "mountain-bike-teenager",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:28.323+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike92",
+      "smetadata": {
+        "type": "mountain-bike-teenager"
+      },
+      "sname": "mountain-bike-teenager(92)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 10:50:15.000+0000",
+      "tname": "city-bike-adult-without-gears",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-13 17:16:29.958+0000",
+      "mvalidtime": "2016-07-14 10:50:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike104",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(104)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-07-14 14:10:15.750+0000",
+      "tdescription": "number of available vehicles / charging points",
+      "tmetadata": {},
+      "tname": "number-available",
+      "ttype": "Instantaneous",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2016-07-13 16:25:22.815+0000",
+      "mvalidtime": "2016-07-14 14:10:15.750+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000046",
+      "scoordinate": {
+        "x": 11.322108,
+        "y": 46.47904,
+        "srid": 4326
+      },
+      "smetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "TEMPORARYUNAVAILABLE",
+        "address": "Via Lungo Isarco Sinistro",
+        "capacity": 2,
+        "provider": "AER",
+        "municipality": "Bolzano - Bozen"
+      },
+      "sname": "CU_GUASTA_01",
+      "sorigin": "ALPERIA",
+      "stype": "EChargingStation"
+    },
+    {
+      "_timestamp": "2016-07-14 14:10:15.828+0000",
+      "tdescription": "the state can either be 0, which means that the plug is currently not available, or it can be 1 which means it is",
+      "tmetadata": {},
+      "tname": "echarging-plug-status",
+      "ttype": "",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2016-07-13 16:25:30.576+0000",
+      "mvalidtime": "2016-07-14 14:10:15.828+0000",
+      "mvalue": 4,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "AER_00000046",
+      "pcoordinate": {
+        "x": 11.322108,
+        "y": 46.47904,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "TEMPORARYUNAVAILABLE",
+        "address": "Via Lungo Isarco Sinistro",
+        "capacity": 2,
+        "provider": "AER",
+        "municipality": "Bolzano - Bozen"
+      },
+      "pname": "CU_GUASTA_01",
+      "porigin": "ALPERIA",
+      "ptype": "EChargingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000046-2",
+      "scoordinate": {
+        "x": 11.322108,
+        "y": 46.47904,
+        "srid": 4326
+      },
+      "smetadata": {
+        "outlets": [
+          {
+            "id": "2",
+            "maxPower": 22,
+            "maxCurrent": 31,
+            "minCurrent": 0,
+            "hasFixedCable": false,
+            "outletTypeCode": "Type2Mennekes"
+          }
+        ],
+        "maxPower": 7015,
+        "maxCurrent": 31,
+        "minCurrent": 6,
+        "municipality": "Bolzano - Bozen",
+        "outletTypeCode": "IEC 62196-2 type 2 outlets (all amperage and phase)"
+      },
+      "sname": "CU_GUASTA_01-758",
+      "sorigin": "ALPERIA",
+      "stype": "EChargingPlug"
+    },
+    {
+      "_timestamp": "2016-07-14 14:10:15.828+0000",
+      "tdescription": "the state can either be 0, which means that the plug is currently not available, or it can be 1 which means it is",
+      "tmetadata": {},
+      "tname": "echarging-plug-status",
+      "ttype": "",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2016-07-13 16:25:30.168+0000",
+      "mvalidtime": "2016-07-14 14:10:15.828+0000",
+      "mvalue": 4,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "AER_00000046",
+      "pcoordinate": {
+        "x": 11.322108,
+        "y": 46.47904,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "TEMPORARYUNAVAILABLE",
+        "address": "Via Lungo Isarco Sinistro",
+        "capacity": 2,
+        "provider": "AER",
+        "municipality": "Bolzano - Bozen"
+      },
+      "pname": "CU_GUASTA_01",
+      "porigin": "ALPERIA",
+      "ptype": "EChargingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000046-1",
+      "scoordinate": {
+        "x": 11.322108,
+        "y": 46.47904,
+        "srid": 4326
+      },
+      "smetadata": {
+        "outlets": [
+          {
+            "id": "1",
+            "maxPower": 22,
+            "maxCurrent": 31,
+            "minCurrent": 0,
+            "hasFixedCable": false,
+            "outletTypeCode": "Type2Mennekes"
+          }
+        ],
+        "maxPower": 7015,
+        "maxCurrent": 31,
+        "minCurrent": 6,
+        "municipality": "Bolzano - Bozen",
+        "outletTypeCode": "IEC 62196-2 type 2 outlets (all amperage and phase)"
+      },
+      "sname": "CU_GUASTA_01-757",
+      "sorigin": "ALPERIA",
+      "stype": "EChargingPlug"
+    },
+    {
+      "_timestamp": "2016-10-13 16:45:16.558+0000",
+      "tdescription": "the state can either be 0, which means that the plug is currently not available, or it can be 1 which means it is",
+      "tmetadata": {},
+      "tname": "echarging-plug-status",
+      "ttype": "",
+      "tunit": "",
+      "mperiod": 600,
+      "mtransactiontime": "2016-10-13 16:45:20.439+0000",
+      "mvalidtime": "2016-10-13 16:45:16.558+0000",
+      "mvalue": 1,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "AER_00000031",
+      "pcoordinate": {
+        "x": 11.1488,
+        "y": 46.674755,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "city": "BOLZANO - BOZEN",
+        "state": "ACTIVE",
+        "address": "Via Lungo Isarco Sinistro 45",
+        "capacity": 1,
+        "provider": "EDY",
+        "municipality": "Meran - Merano"
+      },
+      "pname": "CU_P_AEW_ME_P34",
+      "porigin": "ALPERIA",
+      "ptype": "EChargingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "AER_00000031-1",
+      "scoordinate": {
+        "x": 11.1488,
+        "y": 46.674755,
+        "srid": 4326
+      },
+      "smetadata": {
+        "outlets": [
+          {
+            "id": "1",
+            "maxPower": 22,
+            "maxCurrent": 31,
+            "minCurrent": 0,
+            "hasFixedCable": false,
+            "outletTypeCode": "Type2Mennekes"
+          },
+          {
+            "id": "2",
+            "maxPower": 2300,
+            "maxCurrent": 10,
+            "minCurrent": 10,
+            "hasFixedCable": false,
+            "outletTypeCode": "UNKNOWN"
+          }
+        ],
+        "municipality": "Meran - Merano"
+      },
+      "sname": "CU_P_AEW_ME_P34-324",
+      "sorigin": "ALPERIA",
+      "stype": "EChargingPlug"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:59.293+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike142",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(142)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:59.227+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 1,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike143",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(143)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:59.460+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation2",
+      "pcoordinate": {
+        "x": 11.150187,
+        "y": 46.672476,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 28,
+          "mountain-bike-adult": 4,
+          "mountain-bike-child": 8,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 9,
+          "city-bike-adult-without-gears": 5
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Stazione treni",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike139",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(139)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:59.085+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike141",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(141)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2015-05-19 11:36:21.690+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike77",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(77)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:58.976+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike147",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(147)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:58.750+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike146",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(146)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:58.621+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike145",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(145)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:58.466+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike144",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(144)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:58.271+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "pactive": false,
+      "pavailable": true,
+      "pcode": "bikestation1",
+      "pcoordinate": {
+        "x": 11.159114,
+        "y": 46.668134,
+        "srid": 4326
+      },
+      "pmetadata": {
+        "bikes": {
+          "number-available": 49,
+          "mountain-bike-adult": 5,
+          "mountain-bike-child": 7,
+          "mountain-bike-teenager": 3,
+          "city-bike-adult-with-gears": 23,
+          "city-bike-adult-without-gears": 13
+        },
+        "municipality": "Meran - Merano"
+      },
+      "pname": "Terme",
+      "porigin": "ALGORAB",
+      "ptype": "BikesharingStation",
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike148",
+      "smetadata": {
+        "type": "city-bike-adult-with-gears"
+      },
+      "sname": "city-bike-adult-with-gears(148)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2016-07-14 10:55:56.162+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike11",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(11)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:25:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2015-05-19 11:36:24.456+0000",
+      "mvalidtime": "2016-10-25 16:25:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike113",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(113)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    },
+    {
+      "_timestamp": "2016-10-25 16:30:15.000+0000",
+      "tdescription": "availability",
+      "tmetadata": {},
+      "tname": "availability",
+      "mperiod": 300,
+      "mtransactiontime": "2015-05-19 11:36:21.183+0000",
+      "mvalidtime": "2016-10-25 16:30:15.000+0000",
+      "mvalue": 0,
+      "prlineage": "VARIOUS",
+      "prname": "Delta migration-script from V1 to V2",
+      "sactive": false,
+      "savailable": true,
+      "scode": "bike72",
+      "smetadata": {
+        "type": "city-bike-adult-without-gears"
+      },
+      "sname": "city-bike-adult-without-gears(72)",
+      "sorigin": "ALGORAB",
+      "stype": "Bicycle"
+    }
+  ],
+  "limit": 200
+}

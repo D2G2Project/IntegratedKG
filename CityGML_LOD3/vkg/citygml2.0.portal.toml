@@ -1,0 +1,41 @@
+title="CityGML LOD3 example query"
+
+[defaultTab]
+query="""
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
+PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+# Q1: Find any windows or doors
+SELECT *
+{
+?buildingPart a bldg:Door .
+# ?buildingPart a bldg:Window .
+# Not a real EPSG:25832 coordinate system, but one that starts at (0, 0, 0)
+?buildingPart geo:hasGeometry/geo:asWKT ?wkt .
+}
+"""
+
+[[tabGroups]]
+
+name="Examples"
+
+[[tabGroups.tabs]]
+
+name="Q1: Find any windows or doors"
+query="""
+PREFIX d2g2: <https://github.com/D2G2Project/CityGML#>
+PREFIX bldg: <http://www.opengis.net/citygml/building/2.0/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+# Q1: Find any windows or doors
+SELECT *
+{
+?buildingPart a bldg:Door .
+# ?buildingPart a bldg:Window .
+# Not a real EPSG:25832 coordinate system, but one that starts at (0, 0, 0)
+?buildingPart geo:hasGeometry/geo:asWKT ?wkt .
+}
+"""

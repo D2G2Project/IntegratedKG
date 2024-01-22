@@ -1,0 +1,93 @@
+version: "3.8"
+
+services:
+  # Create 3DCityDB schema
+  3dcitydb-db:
+    image: 3dcitydb/3dcitydb-pg:14-3.2-4.1.0
+    container_name: 3dcitydb-db_lod3
+    command:
+      - "-c"
+      - "max_wal_size=4GB"
+    environment:
+      - POSTGRES_DB=citydb
+      - POSTGRES_USER=citydb
+      - POSTGRES_PASSWORD=citydb
+      - PGUSER=citydb
+      - PGDATA=postgres
+      - SRID=25832
+    ports:
+      - "7779:5432"
+    networks:
+      - citydb-net
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -h 3dcitydb-db" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Load 3DCityDB data
+  3dcitydb-impexp:
+    image: 3dcitydb/impexp:5.3.0
+    container_name: 3dcitydb-impexp_lod3
+    command:
+      - "import"
+      - "-H"
+      - "host.docker.internal"
+      - "-d"
+      - "citydb"
+      - "-u"
+      - "citydb"
+      - "-p"
+      - "citydb"
+      - "/data"
+    environment:
+      - CITYDB_TYPE=postgresql
+      - CITYDB_PORT=7779
+      - CITYDB_HOST=localhost
+      - CITYDB_NAME=citydb
+      - CITYDB_SCHEMA=citydb
+      - CITYDB_USERNAME=citydb
+      - CITYDB_PASSWORD=citydb
+      - SRID=25832
+    ports:
+      - "7788:5432"
+    volumes:
+      - ./citygml-data:/data
+    depends_on:
+      3dcitydb-db:
+        condition: service_healthy
+    networks:
+      - citydb-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Start ontop
+  ontop:
+    image: ontop/ontop:5.1.2
+    container_name: ontop_lod3
+    environment:
+      ONTOP_ONTOLOGY_FILE: /opt/ontop/input/citygml2.0.owl
+      ONTOP_XML_CATALOG_FILE: /opt/ontop/input/catalog-v001.xml
+      ONTOP_MAPPING_FILE: /opt/ontop/input/citygml2.0-lod3edit.obda
+      ONTOP_PROPERTIES_FILE: /opt/ontop/input/citygml2.0.properties
+      ONTOP_PORTAL_FILE: /opt/ontop/input/citygml2.0.portal.toml
+      ONTOP_CORS_ALLOWED_ORIGINS: "*"
+      ONTOP_DEV_MODE: "true"
+      ONTOP_LOG_LEVEL: "true"
+    volumes:
+      - ./vkg:/opt/ontop/input
+      - ./jdbc:/opt/ontop/jdbc
+    depends_on:
+      3dcitydb-impexp:
+        condition: service_completed_successfully
+    ports:
+      - "8082:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  d2g2:
+
+networks:
+  citydb-net:
+    name: citydb-net

@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  pgsql:
+    container_name: pgsql_ifc
+    # PostGIS database
+    build: ./pgsql/
+    ports:
+      - "7778:5432"
+    environment:
+      - POSTGRES_DB=ifcsql
+      - POSTGRES_USER=ifcsql
+      - POSTGRES_PASSWORD=ifcsql
+      - PGDATA=postgres
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ifcsql" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    container_name: app_ifc
+    build: ./app/
+    depends_on:
+      pgsql:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  ontop:
+    container_name: ontop_ifc
+    image: ontop/ontop:5.1.2
+    environment:
+      ONTOP_ONTOLOGY_FILE: /opt/ontop/input/IFC4.owl
+      #Ontology with an additional data property to get coordinates directly
+      #ONTOP_ONTOLOGY_FILE: /opt/ontop/input/IFC4-with-rules.owl
+      ONTOP_XML_CATALOG_FILE: /opt/ontop/input/catalog-v001.xml
+      ONTOP_MAPPING_FILE: /opt/ontop/input/IFC4.obda
+      ONTOP_PROPERTIES_FILE: /opt/ontop/input/IFC4.properties
+      ONTOP_PORTAL_FILE: /opt/ontop/input/ifc.portal.toml
+      ONTOP_CORS_ALLOWED_ORIGINS: "*"
+      ONTOP_DEV_MODE: "true"
+      ONTOP_DEBUG: "true"
+      #Optional rules file allows for ?site ifc:fullCoordinates ?coord .
+      ONTOP_SPARQL_RULES_FILE: /opt/ontop/input/ifc-rules.toml
+    volumes:
+      - ./vkg-ifc-mappings:/opt/ontop/input
+      - ./jdbc:/opt/ontop/jdbc
+      - ./wait-for-it:/opt/wait-for-it
+    depends_on:
+      app:
+        condition: service_completed_successfully
+    ports:
+      - "8083:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

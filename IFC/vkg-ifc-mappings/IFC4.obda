@@ -1,0 +1,203 @@
+[PrefixDeclaration]
+:		http://cui.unige.ch/citygml/2.0/
+cc:		http://creativecommons.org/ns#
+dc:		http://purl.org/dc/elements/1.1/
+xs:		http://www.w3.org/2001/XMLSchema
+app:		http://www.opengis.net/citygml/appearance/2.0/
+dce:		http://purl.org/dc/elements/1.1/
+dem:		http://www.opengis.net/citygml/relief/2.0/
+frn:		http://www.opengis.net/citygml/cityfurniture/2.0/
+gen:		http://www.opengis.net/citygml/generics/2.0/
+geo:		http://www.opengis.net/ont/geosparql#
+gml:		http://www.opengis.net/gml/
+grp:		http://www.opengis.net/citygml/cityobjectgroup/2.0/
+ifc:		http://ifcowl.openbimstandards.org/IFC4#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+tex:		http://www.opengis.net/citygml/texturedsurface/2.0/
+tun:		http://www.opengis.net/citygml/tunnel/2.0/
+veg:		http://www.opengis.net/citygml/vegetation/2.0/
+voc:		http://vocabulary.example.org/
+wtr:		http://www.opengis.net/citygml/waterbody/2.0/
+www:		http://www.w3.org/2001/
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+bldg:		http://www.opengis.net/citygml/building/2.0/
+brid:		http://www.opengis.net/citygml/bridge/2.0/
+core:		http://www.opengis.net/citygml/2.0/
+data:		http://mydata.example.org/
+expr:		https://w3id.org/express#
+list:		https://w3id.org/list#
+luse:		http://www.opengis.net/citygml/landuse/2.0/
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+skos:		http://www.w3.org/2004/02/skos/core#
+tran:		http://www.opengis.net/citygml/transportation/2.0/
+vann:		http://purl.org/vocab/vann/
+terms:		http://purl.org/dc/terms/
+ifcowl:		http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD2#
+
+[MappingDeclaration] @collection [[
+mappingId	Site
+target		ifc:site/{id} a ifc:IfcSite ; ifc:refElevation_IfcSite ifc:measure/{id} ; ifc:refLatitude_IfcSite ifc:latdegmeasure/{lat_degrees} ; ifc:refLongitude_IfcSite ifc:lngdegmeasure/{lng_degrees} .
+source		SELECT * FROM public."IfcSite"
+
+mappingId	Site_Elevation
+target		ifc:measure/{id} a ifc:IfcLengthMeasure ; expr:hasDouble {RefElevation}^^www:XMLSchema#double .
+source		SELECT * FROM public."IfcSite"
+
+mappingId	Latitude_Degrees_Measure
+target		ifc:latdegmeasure/{lat_degrees} a ifc:IfcLengthMeasure ; list:hasContents expr:integer/{lat_degrees} ; list:hasNext ifc:latminmeasure/{lat_minutes} .
+source		SELECT "RefLatitude", lat_degrees, lat_minutes
+			FROM public."IfcSite"
+
+mappingId	Latitude_Degrees_Value
+target		expr:integer/{lat_degrees} expr:hasInteger {lat_degrees}^^www:XMLSchema#integer .
+source		SELECT lat_degrees
+			FROM public."IfcSite"
+
+mappingId	Latitude_Minutes_Measure
+target		ifc:latminmeasure/{lat_minutes} a ifc:IfcLengthMeasure ; list:hasContents expr:integer/{lat_minutes} ; list:hasNext ifc:latsecmeasure/{lat_seconds} .
+source		SELECT *
+			FROM public."IfcSite"
+
+mappingId	Latitude_Seconds_Measure
+target		ifc:latsecmeasure/{lat_seconds} a ifc:IfcLengthMeasure ; list:hasContents expr:integer/{lat_seconds} ; list:hasNext ifc:latmilsecmeasure/{lat_millionthseconds} .
+source		SELECT *
+			FROM public."IfcSite"
+
+mappingId	Latitude_Minutes_Value
+target		expr:integer/{lat_minutes} expr:hasInteger {lat_minutes}^^www:XMLSchema#integer .
+source		SELECT *
+			FROM public."IfcSite"
+
+mappingId	Latitude_Seconds_Value
+target		expr:integer/{lat_seconds} expr:hasInteger {lat_seconds}^^www:XMLSchema#integer .
+source		SELECT *
+			FROM public."IfcSite"
+
+mappingId	Latitude_Millionthseconds_Value
+target		expr:integer/{lat_millionthseconds} expr:hasInteger {lat_millionthseconds}^^www:XMLSchema#integer .
+source		SELECT *
+			FROM public."IfcSite"
+
+mappingId	Longitude_Degrees_Measure
+target		ifc:lngdegmeasure/{lng_degrees} a ifc:IfcLengthMeasure ; list:hasContents expr:integer/{lng_degrees} ; list:hasNext ifc:lngminmeasure/{lng_minutes} .
+source		SELECT "RefLongitude", lng_degrees, lng_minutes
+			FROM public."IfcSite"
+
+mappingId	Longitude_Degrees_Value
+target		expr:integer/{lng_degrees} expr:hasInteger {lng_degrees}^^www:XMLSchema#integer .
+source		SELECT lng_degrees
+			FROM public."IfcSite"
+
+mappingId	Longitude_Minutes_Measure
+target		ifc:lngminmeasure/{lng_minutes} a ifc:IfcLengthMeasure ; list:hasContents expr:integer/{lng_minutes} ; list:hasNext ifc:lngsecmeasure/{lng_seconds} .
+source		SELECT *
+			FROM public."IfcSite"
+
+mappingId	Longitude_Seconds_Measure
+target		ifc:lngsecmeasure/{lng_seconds} a ifc:IfcLengthMeasure ; list:hasContents expr:integer/{lng_seconds} ; list:hasNext ifc:lngmilsecmeasure/{lng_millionthseconds} .
+source		SELECT *
+			FROM public."IfcSite"
+
+mappingId	Longitude_Minutes_Value
+target		expr:integer/{lng_minutes} expr:hasInteger {lng_minutes}^^www:XMLSchema#integer .
+source		SELECT lng_minutes
+			FROM public."IfcSite"
+
+mappingId	Longitude_Seconds_Value
+target		expr:integer/{lng_seconds} expr:hasInteger {lng_seconds}^^www:XMLSchema#integer .
+source		SELECT lng_seconds
+			FROM public."IfcSite"
+
+mappingId	Longitude_Millionthseconds_Value
+target		expr:integer/{lng_millionthseconds} expr:hasInteger {lng_millionthseconds}^^www:XMLSchema#integer .
+source		SELECT lng_millionthseconds
+			FROM public."IfcSite"
+
+mappingId	Latitude_Millionthseconds_Measure
+target		ifc:latmilsecmeasure/{lat_millionthseconds} a ifc:IfcLengthMeasure ; list:hasContents expr:integer/{lat_millionthseconds} .
+source		SELECT *
+			FROM public."IfcSite"
+
+mappingId	Longitude_Millionthseconds_Measure
+target		ifc:lngmilsecmeasure/{lng_millionthseconds} a ifc:IfcLengthMeasure ; list:hasContents expr:integer/{lng_millionthseconds} .
+source		SELECT *
+			FROM public."IfcSite"
+
+mappingId	IfcElementQuantity
+target		ifc:eq/{id} a ifc:IfcElementQuantity .
+source		SELECT *
+			FROM public."IfcElementQuantity"
+
+mappingId	QuantityVolumes
+target		ifc:eq/{ElementQuantity_id} ifc:quantities_IfcElementQuantity ifc:q/{id} .
+source		SELECT *
+			FROM public."IfcQuantity"
+
+mappingId	QuantityArea
+target		ifc:q/{id} a ifc:IfcQuantityArea ; ifc:name_IfcPhysicalQuantity ifc:label/{id} .
+source		SELECT id, "Name"
+			FROM public."IfcQuantity"
+			WHERE type='IfcQuantityArea'
+
+mappingId	QuantityVolume
+target		ifc:q/{id} a ifc:IfcQuantityVolume ; ifc:name_IfcPhysicalQuantity ifc:label/{id} .
+source		SELECT id, "Name"
+			FROM public."IfcQuantity"
+			WHERE type='IfcQuantityVolume'
+
+mappingId	QuantityLength
+target		ifc:q/{id} a ifc:IfcQuantityLength ; ifc:name_IfcPhysicalQuantity ifc:label/{id} .
+source		SELECT id, "Name"
+			FROM public."IfcQuantity"
+			WHERE type='IfcQuantityLength'
+
+mappingId	QuantityCount
+target		ifc:q/{id} a ifc:IfcQuantityCount ; ifc:name_IfcPhysicalQuantity ifc:label/{id} .
+source		SELECT id, "Name"
+			FROM public."IfcQuantity"
+			WHERE type='IfcQuantityCount'
+
+mappingId	QuantityLabel
+target		ifc:label/{id} expr:hasString {Name}^^www:XMLSchema#string .
+source		SELECT id, "Name"
+			FROM public."IfcQuantity"
+
+mappingId	VolumeId
+target		ifc:q/{id} ifc:volumeValue_IfcQuantityVolume ifc:real/{id} .
+source		SELECT *
+			FROM public."IfcQuantity"
+			WHERE "type" = 'IfcQuantityVolume'
+
+mappingId	VolumeValue
+target		ifc:real/{id} expr:hasDouble {Value}^^www:XMLSchema#double .
+source		SELECT *
+			FROM public."IfcQuantity"
+
+mappingId	IfcBuilding
+target		ifc:building/{id} a ifc:IfcBuilding ; ifc:globalId_IfcRoot :globalid/{id} ; ifc:ownerHistory_IfcRoot ifc:ownerhistory/{OwnerHistory_id} ; ifc:name_IfcRoot :name/{id} ; ifc:description_IfcRoot :description/{id} ; ifc:objectType_IfcObject :objecttype/{id} ; ifc:objectPlacement_IfcProduct :objectplacement/{ObjectPlacement_id} ; ifc:compositionType_IfcSpatialStructureElement :element/{CompositionType} .
+source		SELECT *
+			FROM public."IfcBuilding"
+
+mappingId	IfcGloballyUniqueId
+target		:globalid/{id} a ifc:IfcGloballyUniqueId ; expr:hasString {GlobalId}^^www:XMLSchema#string .
+source		SELECT "id", "GlobalId"
+			FROM public."IfcBuilding"
+
+mappingId	IfcBuildingName
+target		:name/{id} a ifc:IfcLabel ; expr:hasString {Name}^^www:XMLSchema#string .
+source		SELECT "id", "Name"
+			FROM public."IfcBuilding"
+
+mappingId	IfcBuildingDescription
+target		:description/{id} a ifc:IfcText ; expr:hasString {Description}^^www:XMLSchema#string .
+source		SELECT "id", "Description"
+			FROM public."IfcBuilding"
+
+mappingId	IfcBuildingObjectType
+target		:objecttype/{id} a ifc:IfcLabel ; expr:hasString {ObjectType}^^www:XMLSchema#string .
+source		SELECT "id", "ObjectType"
+			FROM public."IfcBuilding"
+]]

@@ -1,0 +1,46 @@
+rules = [
+    """
+    PREFIX : <http://cui.unige.ch/citygml/2.0/>
+    PREFIX ifc: <http://ifcowl.openbimstandards.org/IFC4#>
+    PREFIX express: <https://w3id.org/express#>
+    PREFIX expr: <https://w3id.org/express#>
+    PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX list:  <https://w3id.org/list#>
+    PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+    INSERT {
+      ?site ifc:fullCoordinates ?fullCoordinates .
+    } WHERE {
+      # Get site
+  ?site a ifc:IfcSite .
+
+  # Get latitude
+  ?site ifc:refLatitude_IfcSite ?latitude .
+  ?latitude list:hasContents ?lat_comp_1 .
+  ?lat_comp_1 expr:hasInteger ?lat_deg .
+  ?latitude list:hasNext ?lat_next_1 .
+  ?lat_next_1 list:hasContents ?lat_comp_2_1 .
+  ?lat_comp_2_1 express:hasInteger ?lat_min .
+  ?lat_next_1 list:hasNext ?lat_next_2 .
+  ?lat_next_2 list:hasContents ?lat_comp_3_1 .
+  ?lat_comp_3_1 express:hasInteger ?lat_sec .
+
+  # Get longitude
+  ?site ifc:refLongitude_IfcSite ?longitude .
+  ?longitude list:hasContents ?lng_comp_1 .
+  ?lng_comp_1 express:hasInteger ?lng_deg .
+  ?longitude list:hasNext ?lng_next_1 .
+  ?lng_next_1 list:hasContents ?lng_comp_2_1 .
+  ?lng_comp_2_1 express:hasInteger ?lng_min .
+  ?lng_next_1 list:hasNext ?lng_next_2 .
+  ?lng_next_2 list:hasContents ?lng_comp_3_1 .
+  ?lng_comp_3_1 express:hasInteger ?lng_sec .
+
+  # NOTE/TODO: STRDT not supported by Ontop. Workaround needed to convert to wkt
+  # Retrieve point (longitude latitude) with 7 decimal digits
+  BIND(
+      CONCAT("POINT(", STR(ROUND((?lng_deg + ?lng_min/60 + ?lng_sec/3600)*10000000)/10000000), " ",
+        STR(ROUND((?lat_deg + ?lat_min/60 + ?lat_sec/3600)*10000000)/10000000), ")") AS ?fullCoordinates ) .
+    }
+    """
+    ]

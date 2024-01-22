@@ -1,0 +1,36 @@
+[PrefixDeclaration]
+:		http://cui.unige.ch/citygml/2.0/
+dc:		http://purl.org/dc/elements/1.1/
+xs:		http://www.w3.org/2001/XMLSchema
+app:		http://www.opengis.net/citygml/appearance/2.0/
+dem:		http://www.opengis.net/citygml/relief/2.0/
+frn:		http://www.opengis.net/citygml/cityfurniture/2.0/
+gen:		http://www.opengis.net/citygml/generics/2.0/
+geo:		http://www.opengis.net/ont/geosparql#
+gml:		http://www.opengis.net/gml/
+grp:		http://www.opengis.net/citygml/cityobjectgroup/2.0/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+tex:		http://www.opengis.net/citygml/texturedsurface/2.0/
+tun:		http://www.opengis.net/citygml/tunnel/2.0/
+veg:		http://www.opengis.net/citygml/vegetation/2.0/
+voc:		http://vocabulary.example.org/
+wtr:		http://www.opengis.net/citygml/waterbody/2.0/
+www:		http://www.w3.org/2001/
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+bldg:		http://www.opengis.net/citygml/building/2.0/
+brid:		http://www.opengis.net/citygml/bridge/2.0/
+core:		http://www.opengis.net/citygml/2.0/
+data:		http://mydata.example.org/
+luse:		http://www.opengis.net/citygml/landuse/2.0/
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+skos:		http://www.w3.org/2004/02/skos/core#
+tran:		http://www.opengis.net/citygml/transportation/2.0/
+terms:		http://purl.org/dc/terms/
+
+[MappingDeclaration] @collection [[
+
+
+]]

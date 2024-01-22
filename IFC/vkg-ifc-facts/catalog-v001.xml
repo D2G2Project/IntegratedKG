@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="https://w3id.org/list" uri="list.owl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/express" uri="express.owl"/>
+    <uri id="User Entered Import Resolution" name="http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#" uri="IFC4.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1675607780582" name="http://www.co-ode.org/ontologies/lists/2008/09/11/list.owl" uri="list.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1675607780582" name="https://w3id.org/express" uri="express.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1675607780582" name="http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#" uri="IFC4.owl"/>
+    </group>
+</catalog>

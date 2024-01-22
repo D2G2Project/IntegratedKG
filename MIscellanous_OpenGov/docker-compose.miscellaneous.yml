@@ -1,0 +1,108 @@
+version: "3.8"
+
+services:
+  pgsql:
+    container_name: pgsql_misc
+    build: ./pgsql
+    env_file: .env
+    ports:
+      - "7777:5432"
+    environment:
+      # - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=sudtirol_db
+      - POSTGRES_USER=citydb
+      - PGUSER=citydb
+      - POSTGRES_PASSWORD=citydb
+      - PGDATA=postgres
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h pgsql"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  gdal:
+    container_name: gdal_misc
+    build: ./gdal
+    networks:
+      - citydb-net
+    depends_on:
+      pgsql:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  odh-temperature:
+    container_name: odh-temperature
+    build:
+      context: python/
+    depends_on:
+      gdal:
+        condition: service_completed_successfully
+    networks:
+      - citydb-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Add table with all OSM points of interest
+  osm2pgsql:
+    container_name: osm2pgsql_misc
+    build:
+      context: osm2pgsql/
+    command: bash -c "sleep 5; /usr/local/bin/osm-importer.sh"
+    environment:
+      PG_PORT_5432_TCP_ADDR: host.docker.internal
+      PG_PORT_5432_TCP_PORT: 7777
+      PG_ENV_POSTGRES_DB: sudtirol_db
+      PG_ENV_POSTGRES_USER: citydb
+      PG_ENV_POSTGRES_PASSWORD: citydb
+      REGION: europe/italy/nord-est
+    depends_on:
+      odh-temperature:
+        condition: service_completed_successfully
+    networks:
+      - citydb-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  db-edit:
+    container_name: db-edit_misc
+    build:
+      context: db-edit/
+    depends_on:
+      osm2pgsql:
+        condition: service_completed_successfully
+    networks:
+      - citydb-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+
+  # Start ontop
+  ontop:
+    container_name: ontop_misc
+    image: ontop/ontop:5.1.2
+    environment:
+      ONTOP_ONTOLOGY_FILE: /opt/ontop/input/citygml2.0.owl
+      ONTOP_XML_CATALOG_FILE: /opt/ontop/input/catalog-v001.xml
+      ONTOP_MAPPING_FILE: /opt/ontop/input/citygml2.0.obda
+      ONTOP_PROPERTIES_FILE: /opt/ontop/input/citygml2.0.properties
+      ONTOP_PORTAL_FILE: /opt/ontop/input/citygml2.0.portal.toml
+      ONTOP_CORS_ALLOWED_ORIGINS: "*"
+      ONTOP_DEV_MODE: "true"
+      ONTOP_LOG_LEVEL: "true"
+    volumes:
+      - ./vkg:/opt/ontop/input
+      - ./jdbc:/opt/ontop/jdbc
+    depends_on:
+      db-edit:
+        condition: service_completed_successfully
+    ports:
+      - "8082:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  citydb-net:
+    name: citydb-net
