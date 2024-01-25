@@ -10,9 +10,8 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 # Q1: Find any windows or doors
 SELECT *
 {
-?buildingPart a bldg:Door .
-# ?buildingPart a bldg:Window .
-# Not a real EPSG:25832 coordinate system, but one that starts at (0, 0, 0)
+?buildingPart a bldg:Window .
+# ?buildingPart a bldg:Door .
 ?buildingPart geo:hasGeometry/geo:asWKT ?wkt .
 }
 """
@@ -33,9 +32,8 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 # Q1: Find any windows or doors
 SELECT *
 {
-?buildingPart a bldg:Door .
-# ?buildingPart a bldg:Window .
-# Not a real EPSG:25832 coordinate system, but one that starts at (0, 0, 0)
+?buildingPart a bldg:Window .
+# ?buildingPart a bldg:Door .
 ?buildingPart geo:hasGeometry/geo:asWKT ?wkt .
 }
 """

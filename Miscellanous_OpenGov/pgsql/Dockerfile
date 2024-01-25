@@ -1,5 +1,5 @@
 #FROM postgres:15.4
-FROM postgis/postgis:16.3.4
+FROM postgis/postgis:latest
 
 #RUN apt-get  update && apt-get install -y wget postgresql-15-postgis-3
 

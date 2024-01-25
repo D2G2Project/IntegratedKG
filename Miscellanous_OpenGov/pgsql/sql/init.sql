@@ -3,5 +3,5 @@
 
 \connect sudtirol_db
 
-CREATE EXTENSION postgis;
+--CREATE EXTENSION postgis;
 CREATE EXTENSION postgis_sfcgal;
