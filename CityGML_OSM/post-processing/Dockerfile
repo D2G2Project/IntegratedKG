@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM debian:bullseye-slim
 RUN apt-get update
 RUN apt-get install postgresql-client -y
 COPY postprocess-osm.sql .

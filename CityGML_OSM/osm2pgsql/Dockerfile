@@ -6,7 +6,8 @@ RUN apt-get install -y \
         osm2pgsql \
         postgresql-client-15 \
         osmctools \
-        osmium-tool
+        osmium-tool \
+        bash
 
 # clean up
 RUN apt-get clean \
